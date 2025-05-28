@@ -1,0 +1,45 @@
+*************************************** Extensions ********************************
+1) Auto close tag
+
+2) Auto Import
+
+3) Community material Theme
+
+4) Es7+ React/Redux/React-Native snippe
+
+5) material icon theme
+
+6) path intellisense
+
+7)  prettier :-  
+
+*************************************** Icons ********************************
+url:- npmjs.com
+react icons
+npm i typewriter-effect
+npm i react-vertical-timeline-revamped
+
+url : css box shadow
+
+
+npm i react-toastify
+
+**********************************Scroll TOP *****************************************
+
+npmjs.com
+npm i react-scroll-to-top
+*************************************Navitage to page***********************
+npm i react-scroll
+
+*****************************Animation Effect ************************************
+npmjs.com
+npm i react-reveal --force
+
+Aos animation
+https://michalsnik.github.io/aos/
+
+********************
+npm i axios
+
+
+
