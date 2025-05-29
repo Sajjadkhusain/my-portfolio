@@ -63,11 +63,11 @@ const Contact = () => {
               <div className="card2 d-flex  border-0 px-4 py-5">
                 <div className="row">
                   <div className="row">
-                    <h6>
-                      Contact with icons
-                      <BsLinkedin color="blue" size={30} className="ms-2" />
-                      <BsGithub color="black" size={30} className="ms-2" />
-                      <BsFacebook color="blue" size={30} className="ms-2" />
+                    <h6 style={{ textAlign: "center" }}>
+                      {/* Contact with icons */}
+                      <BsLinkedin color="#1e1e1e" size={30} className="ms-2" />
+                      <BsGithub color="#1e1e1e" size={30} className="ms-2" />
+                      <BsFacebook color="#1e1e1e" size={30} className="ms-2" />
                     </h6>
                   </div>
 

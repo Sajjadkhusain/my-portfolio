@@ -30,9 +30,7 @@ const App = () => {
         </div>
         <div className="footer pb-3 ms-3">
           {/* <Tada> */}
-          <h4 className="text-center">
-            Made With 😍 Technoforcast! &copy; 2025
-          </h4>
+          <h4 style={{ textAlign: "center" }}>Technoforcast! &copy; 2025</h4>
           {/* </Tada> */}
         </div>
       </div>
