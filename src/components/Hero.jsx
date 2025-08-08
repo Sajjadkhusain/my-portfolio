@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaFileDownload } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFileDownload,
+  FaArrowDown,
+} from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import "../styles/hero.css";
 
@@ -15,89 +20,232 @@ const Hero = () => {
     document.body.removeChild(link);
   };
 
+  const scrollToNextSection = () => {
+    const nextSection = document.getElementById("about");
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // Text animation variants
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const letterAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.3, 0.1, 0.3, 1],
+      },
+    },
+  };
+
+  const wordAnimation = {
+    hidden: {},
+    visible: {},
+  };
+
+  const titleAnimation = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  // Split title into letters for animation
+  const titleText = "Sajjad Husain Khan";
+  const roleText = "Full Stack Developer";
+
   return (
     <section id="home" className="hero">
       <div className="hero-container">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          initial="hidden"
+          animate="visible"
+          variants={container}
           className="hero-content"
         >
-          <h3 className="hero-subtitle">Hello, I'm</h3>
-          <h1 className="hero-title">John Doe</h1>
-          <h2 className="hero-role">Full Stack Developer</h2>
-          <p className="hero-description">
+          <motion.h3 variants={titleAnimation} className="hero-subtitle">
+            Hello, I'm
+          </motion.h3>
+
+          <motion.h1 className="hero-title">
+            {titleText.split("").map((char, index) => (
+              <motion.span
+                key={index}
+                variants={letterAnimation}
+                style={{ display: "inline-block" }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.h1>
+
+          <motion.h2 className="hero-role">
+            {roleText.split(" ").map((word, wordIndex) => (
+              <motion.span
+                key={wordIndex}
+                variants={wordAnimation}
+                style={{ display: "inline-block", marginRight: "0.25em" }}
+                initial="hidden"
+                animate="visible"
+                transition={{
+                  delay: 0.5 + wordIndex * 0.1,
+                }}
+              >
+                {word.split("").map((char, charIndex) => (
+                  <motion.span
+                    key={charIndex}
+                    variants={letterAnimation}
+                    style={{ display: "inline-block" }}
+                    custom={charIndex}
+                    transition={{
+                      delay: 0.5 + wordIndex * 0.1 + charIndex * 0.05,
+                    }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.span>
+            ))}
+          </motion.h2>
+
+          <motion.p variants={titleAnimation} className="hero-description">
             Passionate about creating interactive applications and experiences
             on the web. I specialize in building responsive and performant web
             applications with modern technologies.
-          </p>
+          </motion.p>
 
-          <div className="hero-buttons">
+          <motion.div variants={titleAnimation} className="hero-buttons">
             <motion.a
-              whileHover={{ scale: 1.05 }}
+              whileHover={{
+                scale: 1.05,
+                background: "linear-gradient(90deg, #9b59b6, #3498db)",
+              }}
               whileTap={{ scale: 0.95 }}
               href="#contact"
               className="hero-btn contact-btn"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2 }}
             >
               Contact Me
             </motion.a>
             <motion.button
-              whileHover={{ scale: 1.05 }}
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "#2c3e50",
+                color: "white",
+              }}
               whileTap={{ scale: 0.95 }}
               onClick={downloadResume}
               className="hero-btn resume-btn"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.3 }}
             >
               <FaFileDownload className="btn-icon" />
               Download CV
             </motion.button>
-          </div>
+          </motion.div>
 
-          <div className="hero-social">
-            <motion.a
-              whileHover={{ y: -5 }}
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <FaGithub className="social-icon" />
-            </motion.a>
-            <motion.a
-              whileHover={{ y: -5 }}
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin className="social-icon" />
-            </motion.a>
-            <motion.a
-              whileHover={{ y: -5 }}
-              href="mailto:john.doe@example.com"
-              aria-label="Email"
-            >
-              <HiMail className="social-icon" />
-            </motion.a>
-          </div>
+          <motion.div
+            className="hero-social"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
+          >
+            {[
+              { icon: <FaGithub />, url: "https://github.com" },
+              { icon: <FaLinkedin />, url: "https://linkedin.com" },
+              { icon: <HiMail />, url: "mailto:sajjadkhan55@gmail.com" },
+            ].map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+                whileHover={{
+                  y: -5,
+                  scale: 1.1,
+                  color: "#3498db",
+                }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                {social.icon}
+              </motion.a>
+            ))}
+          </motion.div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.8,
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+          }}
           className="hero-image"
+          whileHover={{ scale: 1.02 }}
         >
           <div className="image-wrapper">
-            <img
+            <motion.img
               src="/assets/profile.png"
               alt="Developer"
               className="profile-image"
+              loading="lazy"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              whileHover={{ scale: 1.03 }}
             />
-            <div className="image-border"></div>
+            <motion.div
+              className="image-border"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+            />
           </div>
         </motion.div>
       </div>
+
+      <motion.div
+        className="scroll-down"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{
+          opacity: [0, 1, 0],
+          y: [0, 10, 0],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
+        onClick={scrollToNextSection}
+      >
+        <FaArrowDown className="scroll-icon" />
+      </motion.div>
     </section>
   );
 };
