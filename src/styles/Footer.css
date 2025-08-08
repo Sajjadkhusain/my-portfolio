@@ -1,8 +1,9 @@
 .footer {
-  background: #2c3e50;
-  color: #f5f7fa;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 4rem 2rem 2rem;
   font-family: "Poppins", sans-serif;
+  color: #333;
 }
 
 .footer-container {
@@ -20,19 +21,19 @@
 .footer-about h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #3498db;
+  color: #2c3e50;
 }
 
 .footer-about p {
   line-height: 1.6;
-  opacity: 0.9;
+  color: #555;
 }
 
 .footer-links h4,
 .footer-contact h4 {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  color: #3498db;
+  color: #2c3e50;
 }
 
 .footer-links ul,
@@ -50,7 +51,7 @@
 }
 
 .footer-links a {
-  color: #f5f7fa;
+  color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -59,8 +60,12 @@
   color: #3498db;
 }
 
+.footer-contact li {
+  color: #555;
+}
+
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -73,14 +78,36 @@
   gap: 1.5rem;
 }
 
-.social-links a {
-  color: #f5f7fa;
+.social-icon {
+  color: #333;
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
-.social-links a:hover {
+.social-icon:hover {
   color: #3498db;
+}
+
+.contact-icon {
+  color: #333;
+  min-width: 20px;
+}
+
+.footer-bottom p {
+  color: #555;
+}
+
+/* Links columns styling */
+.footer-links .links-columns {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links .links-column {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
 }
 
 /* Responsive Breakpoints */
@@ -92,7 +119,7 @@
 
 @media only screen and (max-width: 992px) {
   .footer-content {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
 
   .footer-about {
@@ -106,7 +133,12 @@
   }
 
   .footer-content {
-    gap: 2.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-about {
+    grid-column: span 2;
   }
 
   .footer-bottom {
@@ -128,6 +160,16 @@
   .footer-contact h4 {
     margin-bottom: 1rem;
   }
+
+  /* Maintain 2-column layout for quick links */
+  .footer-links .links-columns {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .footer-links .links-column {
+    flex: 1;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -148,8 +190,15 @@
     gap: 1.2rem;
   }
 
-  .social-links a {
+  .social-icon {
     font-size: 1.3rem;
+  }
+
+  /* Ensure links stay in 2 columns */
+  .footer-links .links-columns {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
   }
 }
 
@@ -162,6 +211,14 @@
   .footer-contact li {
     font-size: 0.9rem;
   }
+
+  /* Optional: Stack links into single column on very small screens */
+  /*
+  .footer-links .links-columns {
+    flex-direction: column;
+    gap: 0;
+  }
+  */
 }
 
 @media only screen and (max-width: 360px) {
@@ -183,7 +240,7 @@
     gap: 1rem;
   }
 
-  .social-links a {
+  .social-icon {
     font-size: 1.2rem;
   }
 }

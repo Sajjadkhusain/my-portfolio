@@ -1,4 +1,11 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaEnvelope,
+  FaPhoneAlt,
+} from "react-icons/fa";
+import { MdLocationPin } from "react-icons/md";
 import "../styles/Footer.css";
 
 const Footer = () => {
@@ -17,33 +24,47 @@ const Footer = () => {
 
           <div className="footer-links">
             <h4>Quick Links</h4>
-            <ul>
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#skills">Skills</a>
-              </li>
-              <li>
-                <a href="#projects">Projects</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
+            <div className="links-columns">
+              <ul className="links-column">
+                <li>
+                  <a href="#home">Home</a>
+                </li>
+                <li>
+                  <a href="#skills">Skills</a>
+                </li>
+                <li>
+                  <a href="#experience">Experience</a>
+                </li>
+                <li>
+                  <a href="#education">Education</a>
+                </li>
+              </ul>
+              <ul className="links-column">
+                <li>
+                  <a href="#about">About</a>
+                </li>
+                <li>
+                  <a href="#projects">Projects</a>
+                </li>
+                <li>
+                  <a href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
           </div>
-
           <div className="footer-contact">
             <h4>Contact Me</h4>
             <ul>
               <li>
-                <FaEnvelope /> sajjadkhan55@gmail.com
+                <FaEnvelope className="contact-icon" /> sajjadkhan55@gmail.com
               </li>
-              <li>+1 (234) 567-8900</li>
-              <li>Bangalore, India</li>
+              <li>
+                <FaPhoneAlt className="contact-icon" /> +91 9764937392
+              </li>
+              <li>
+                <MdLocationPin className="contact-icon" />
+                Akola,Maharashtra, India
+              </li>
             </ul>
           </div>
         </div>
@@ -55,21 +76,21 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub />
+              <FaGithub className="social-icon" />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin />
+              <FaLinkedin className="social-icon" />
             </a>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTwitter />
+              <FaTwitter className="social-icon" />
             </a>
           </div>
           <p>
