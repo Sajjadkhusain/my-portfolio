@@ -1,14 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
 .hero {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 0 2rem;
+  padding: 4rem 2rem 2rem;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: "Poppins", sans-serif;
 }
 
 .hero-container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -18,45 +22,48 @@
 
 .hero-content {
   flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   color: #3498db;
   margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
 }
 
 .hero-title {
+  padding-top: 1rem;
   font-size: 3.5rem;
   font-weight: 700;
   color: #2c3e50;
   margin-bottom: 0.5rem;
   line-height: 1.2;
-}
-
-.hero-role {
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #7f8c8d;
-  margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
+  letter-spacing: -0.5px;
 }
 
 .hero-description {
   font-size: 1.1rem;
   color: #34495e;
   margin-bottom: 2rem;
-  line-height: 1.6;
-  max-width: 600px;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .hero-buttons {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .hero-btn {
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1.8rem;
   border-radius: 50px;
   font-size: 1rem;
   font-weight: 500;
@@ -65,12 +72,15 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  outline: none;
 }
 
 .contact-btn {
   background: linear-gradient(90deg, #3498db, #9b59b6);
   color: white;
-  border: none;
 }
 
 .resume-btn {
@@ -93,14 +103,15 @@
   gap: 1.5rem;
 }
 
-.social-icon {
+.social-link {
   font-size: 1.8rem;
   color: #2c3e50;
   transition: all 0.3s ease;
   cursor: pointer;
+  display: inline-flex;
 }
 
-.social-icon:hover {
+.social-link:hover {
   color: #3498db;
   transform: translateY(-5px);
 }
@@ -109,51 +120,68 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  max-width: 100%;
 }
 
 .image-wrapper {
+  width: 380px;
+  height: 380px;
+  max-width: 100%;
   position: relative;
-  width: 350px;
-  height: 350px;
 }
 
 .profile-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 20px;
-  z-index: 2;
-  position: relative;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 50%; /* Changed to make it circular */
+  border: 8px solid white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
 }
 
-.image-border {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 5px solid #3498db;
-  border-radius: 20px;
-  top: 20px;
-  left: 20px;
-  z-index: 1;
-  transition: all 0.5s ease;
+.image-wrapper:hover .profile-image {
+  transform: scale(
+    1.03
+  ); /* Changed from rotation to scale for circular image */
 }
 
-.image-wrapper:hover .image-border {
-  top: 15px;
-  left: 15px;
-}
-
-@media (max-width: 992px) {
+/* Responsive Breakpoints */
+@media only screen and (max-width: 1200px) {
   .hero-container {
+    padding: 0 2rem;
+  }
+
+  .hero-title {
+    font-size: 3.2rem;
+  }
+
+  .image-wrapper {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .hero {
+    padding: 6rem 2rem 2rem;
+  }
+
+  .hero-container {
+    padding-top: 20px;
     flex-direction: column;
     text-align: center;
-    padding-top: 5rem;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    align-items: center;
   }
 
   .hero-description {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 2rem;
+    max-width: 80%;
   }
 
   .hero-buttons {
@@ -165,32 +193,147 @@
   }
 
   .image-wrapper {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
     margin-top: 2rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
   }
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
   }
 
-  .hero-role {
-    font-size: 1.4rem;
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .hero-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .image-wrapper {
+    width: 280px;
+    height: 280px;
+    border-width: 6px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .hero {
+    padding: 5rem 1.5rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
   }
 
   .hero-buttons {
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    width: 100%;
   }
 
   .hero-btn {
+    width: 100%;
+    max-width: 250px;
     justify-content: center;
+  }
+
+  .image-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+    letter-spacing: -0.3px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-social {
+    gap: 1.2rem;
+  }
+
+  .social-link {
+    font-size: 1.6rem;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 4rem 1rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
   }
 
   .image-wrapper {
     width: 220px;
     height: 220px;
+  }
+
+  .hero-btn {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .hero-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .social-link {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .image-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
   }
 }
