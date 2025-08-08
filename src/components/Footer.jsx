@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import "../styles/Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -27,27 +28,27 @@ const Footer = () => {
             <div className="links-columns">
               <ul className="links-column">
                 <li>
-                  <a href="#home">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="#skills">Skills</a>
+                  <Link to="/skills">Skills</Link>
                 </li>
                 <li>
-                  <a href="#experience">Experience</a>
+                  <Link to="/experience">Experience</Link>
                 </li>
                 <li>
-                  <a href="#education">Education</a>
+                  <Link to="/education">Education</Link>
                 </li>
               </ul>
               <ul className="links-column">
                 <li>
-                  <a href="#about">About</a>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <a href="#projects">Projects</a>
+                  <Link to="/projects">Projects</Link>
                 </li>
                 <li>
-                  <a href="#contact">Contact</a>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
