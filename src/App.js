@@ -74,6 +74,7 @@ const Skills = lazy(() => import("./components/Skills"));
 const Projects = lazy(() => import("./components/Projects"));
 const Experience = lazy(() => import("./components/Experience"));
 const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function AppContent() {
   const location = useLocation();
@@ -119,6 +120,7 @@ function AppContent() {
           </motion.div>
         )}
       </AnimatePresence>
+      <Footer />
     </>
   );
 }
