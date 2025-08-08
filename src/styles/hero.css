@@ -177,7 +177,7 @@
 
   .hero-content {
     max-width: 100%;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .hero-description {
