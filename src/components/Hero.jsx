@@ -121,7 +121,10 @@ const Hero = () => {
           >
             {[
               { icon: <FaGithub />, url: "https://github.com" },
-              { icon: <FaLinkedin />, url: "https://linkedin.com" },
+              {
+                icon: <FaLinkedin />,
+                url: "https://www.linkedin.com/in/sajjad-husain-khan-980ba6a3/",
+              },
               { icon: <HiMail />, url: "mailto:sajjadkhan55@gmail.com" },
             ].map((social, index) => (
               <motion.a
