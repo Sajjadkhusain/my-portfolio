@@ -11,7 +11,7 @@ const About = () => {
             <img src="/image/khan.png" alt="profile pic" />
           </div>
           <div className="col-md-6 col-xl-6 col-lg-6 col-xs-12 about-content">
-            <h1>About Me</h1>
+            <h1>About Me-Sajjad</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
               deserunt eius incidunt sed quos laborum modi earum voluptates,
