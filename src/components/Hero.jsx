@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaFileDownload } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFileDownload,
+  FaLongArrowAltRight,
+} from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import "../styles/hero.css";
 
@@ -9,7 +14,7 @@ const Hero = () => {
   const downloadResume = () => {
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "sajjad_husain_khan_resume.pdf";
+    link.download = "resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -96,12 +101,13 @@ const Hero = () => {
               href="#contact"
               className="hero-btn contact-btn"
             >
-              Contact Me
+              View My Work <FaLongArrowAltRight className="btn-icon" />
             </motion.a>
             <motion.button
               whileHover={{
                 scale: 1.05,
-                backgroundColor: "#2c3e50",
+                // backgroundColor: "#2c3e50",
+                background: "linear-gradient(90deg, #9b59b6, #3498db)",
                 color: "white",
               }}
               whileTap={{ scale: 0.95 }}
