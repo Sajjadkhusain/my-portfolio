@@ -53,6 +53,10 @@ const Header = () => {
           <NavLink to="/">&lt; Sajjad Husain Khan /&gt;</NavLink>
         </div>
 
+        <button className="menu-toggle" onClick={toggleMenu} aria-label="Menu">
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
         <nav className={`nav ${isOpen ? "open" : ""}`}>
           <ul>
             {navLinks.map((link, index) => (
@@ -62,12 +66,6 @@ const Header = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                {/* <NavLink
-                  to={link.path}
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  {link.name}
-                </NavLink> */}
                 <NavLink
                   to={link.path}
                   className={({ isActive }) => (isActive ? "active" : "")}
@@ -82,10 +80,6 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-
-        <div className="menu-toggle" onClick={toggleMenu}>
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </div>
       </motion.div>
     </header>
   );
