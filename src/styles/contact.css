@@ -1,0 +1,151 @@
+.contact {
+  background-color: #f9f9f9;
+}
+
+.contact-container {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-form {
+  flex: 1;
+}
+
+.contact-subtitle {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  color: #34495e;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.contact-details {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.contact-details li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+.contact-icon {
+  margin-right: 1rem;
+  color: #3498db;
+  font-size: 1.2rem;
+}
+
+.contact-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  color: #3498db;
+  transform: translateY(-5px);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+.submit-success {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: #2ecc71;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .contact-text {
+    font-size: 1rem;
+  }
+
+  .contact-details li {
+    font-size: 1rem;
+  }
+}
