@@ -51,10 +51,16 @@
 .hero-description {
   font-size: 1.1rem;
   color: #34495e;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  text-align: justify;
+  hyphens: auto;
+  /* font-size: 1.1rem;
+  color: #34495e;
   margin-bottom: 2rem;
   line-height: 1.9;
   font-weight: 400;
-  text-align: left;
+  text-align: left; */
 }
 
 .hero-buttons {
@@ -220,6 +226,7 @@
 
   .hero-description {
     font-size: 1rem;
+    text-align: left;
   }
 
   .hero-btn {
@@ -324,7 +331,9 @@
     padding: 0.45rem 0.8rem;
     font-size: 0.75rem;
   }
-
+  .hero-description {
+    font-size: 1rem;
+  }
   .btn-icon {
     font-size: 0.8rem;
   }
