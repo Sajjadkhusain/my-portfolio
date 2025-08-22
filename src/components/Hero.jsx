@@ -61,7 +61,7 @@ const Hero = () => {
         <div className="hero-image">
           <div className="image-wrapper">
             <img
-              src="/assets/sajjad.png"
+              src="/assets/khan1.jpeg"
               alt="Sajjad Husain Khan"
               className="profile-image"
               loading="lazy"
