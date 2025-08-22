@@ -51,16 +51,10 @@
 .hero-description {
   font-size: 1.1rem;
   color: #34495e;
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-  text-align: justify;
-  hyphens: auto;
-  /* font-size: 1.1rem;
-  color: #34495e;
   margin-bottom: 2rem;
   line-height: 1.9;
   font-weight: 400;
-  text-align: left; */
+  text-align: left;
 }
 
 .hero-buttons {
