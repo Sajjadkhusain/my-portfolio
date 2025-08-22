@@ -1,60 +1,3 @@
-// import { lazy, Suspense, useEffect, useState } from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { motion } from "framer-motion";
-// import Header from "./components/Header";
-// import Loader from "./components/Loader";
-// import "./App.css";
-
-// const Home = lazy(() => import("./components/Hero"));
-// const About = lazy(() => import("./components/About"));
-// const Education = lazy(() => import("./components/Education"));
-// const Skills = lazy(() => import("./components/Skills"));
-// const Projects = lazy(() => import("./components/Projects"));
-// const Experience = lazy(() => import("./components/Experience"));
-// const Contact = lazy(() => import("./components/Contact"));
-
-// function App() {
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setLoading(false);
-//     }, 3000);
-//     return () => clearTimeout(timer);
-//   }, []);
-
-//   if (loading) {
-//     return <Loader />;
-//   }
-
-//   return (
-//     <Router>
-//       <div className="app">
-//         <Header />
-//         <motion.div
-//           initial={{ opacity: 0 }}
-//           animate={{ opacity: 1 }}
-//           transition={{ duration: 0.5 }}
-//         >
-//           <Suspense fallback={<Loader />}>
-//             <Routes>
-//               <Route path="/" element={<Home />} />
-//               <Route path="/about" element={<About />} />
-//               <Route path="/education" element={<Education />} />
-//               <Route path="/skills" element={<Skills />} />
-//               <Route path="/projects" element={<Projects />} />
-//               <Route path="/experience" element={<Experience />} />
-//               <Route path="/contact" element={<Contact />} />
-//             </Routes>
-//           </Suspense>
-//         </motion.div>
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
 import { lazy, Suspense, useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
@@ -75,6 +18,7 @@ const Projects = lazy(() => import("./components/Projects"));
 const Experience = lazy(() => import("./components/Experience"));
 const Contact = lazy(() => import("./components/Contact"));
 const Footer = lazy(() => import("./components/Footer"));
+const ErrorPage = lazy(() => import("./components/ErrorPage"));
 
 function AppContent() {
   const location = useLocation();
@@ -115,6 +59,7 @@ function AppContent() {
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/experience" element={<Experience />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<ErrorPage />} />
               </Routes>
             </Suspense>
           </motion.div>

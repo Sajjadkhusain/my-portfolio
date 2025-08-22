@@ -61,6 +61,16 @@ const Hero = () => {
   return (
     <section id="home" className="hero">
       <div className="hero-container">
+        <div className="hero-image">
+          <div className="image-wrapper">
+            <img
+              src="/assets/sajjad.png"
+              alt="Sajjad Husain Khan"
+              className="profile-image"
+              loading="lazy"
+            />
+          </div>
+        </div>
         <motion.div
           initial="hidden"
           animate="visible"
@@ -150,17 +160,6 @@ const Hero = () => {
             ))}
           </motion.div>
         </motion.div>
-
-        <div className="hero-image">
-          <div className="image-wrapper">
-            <img
-              src="/assets/sajjad.png"
-              alt="Sajjad Husain Khan"
-              className="profile-image"
-              loading="lazy"
-            />
-          </div>
-        </div>
       </div>
     </section>
   );
