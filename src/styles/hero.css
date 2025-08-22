@@ -65,19 +65,22 @@
 }
 
 .hero-btn {
-  padding: 0.8rem 1.8rem;
-  border-radius: 50px;
-  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   border: none;
   outline: none;
+  min-width: 140px;
+  justify-content: center;
+  height: auto;
 }
 
 .contact-btn {
@@ -97,7 +100,7 @@
 }
 
 .btn-icon {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .hero-social {
@@ -106,7 +109,7 @@
 }
 
 .social-link {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: #2c3e50;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -121,8 +124,8 @@
 .hero-image {
   flex: 1;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -147,7 +150,6 @@
   transform: scale(1.03);
 }
 
-/* Responsive Breakpoints */
 @media only screen and (max-width: 1200px) {
   .hero-container {
     padding: 0 2rem;
@@ -171,10 +173,9 @@
   .hero-container {
     padding-top: 20px;
     flex-direction: column;
-    text-align: left;
-    gap: 2rem;
-    align-items: center; /* Changed from flex-start */
     text-align: center;
+    gap: 2rem;
+    align-items: center;
   }
 
   .hero-content {
@@ -185,6 +186,7 @@
   .hero-description {
     margin: 0 0 2rem 0;
     max-width: 100%;
+    text-align: center;
   }
 
   .hero-buttons {
@@ -221,8 +223,13 @@
   }
 
   .hero-btn {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.95rem;
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+    min-width: 120px;
+  }
+
+  .btn-icon {
+    font-size: 0.9rem;
   }
 
   .image-wrapper {
@@ -245,6 +252,7 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
+    justify-content: center;
   }
 
   .hero-btn {
@@ -285,6 +293,13 @@
   .hero-btn {
     width: 100%;
     justify-content: center;
+    min-width: unset;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-icon {
+    font-size: 0.85rem;
   }
 
   .hero-social {
@@ -305,14 +320,18 @@
     font-size: 1rem;
   }
 
+  .hero-btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .btn-icon {
+    font-size: 0.8rem;
+  }
+
   .image-wrapper {
     width: 220px;
     height: 220px;
-  }
-
-  .hero-btn {
-    padding: 0.65rem 1.2rem;
-    font-size: 0.9rem;
   }
 }
 
@@ -322,8 +341,12 @@
   }
 
   .hero-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.7rem;
+  }
+
+  .btn-icon {
+    font-size: 0.75rem;
   }
 
   .social-link {
@@ -343,5 +366,14 @@
 
   .hero-subtitle {
     font-size: 0.95rem;
+  }
+
+  .hero-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.65rem;
+  }
+
+  .btn-icon {
+    font-size: 0.7rem;
   }
 }

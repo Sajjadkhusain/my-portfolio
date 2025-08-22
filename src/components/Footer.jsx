@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-about">
-            <h3>Sajjad Husain Khan</h3>
+            <h3 style={{ color: "#3498db" }}>Sajjad Husain Khan</h3>
             <p>
               Full Stack Developer specializing in modern web technologies.
               Building responsive, scalable applications with clean code and
@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
 
           <div className="footer-links">
-            <h4>Quick Links</h4>
+            <h4 style={{ color: "#3498db" }}>Quick Links</h4>
             <div className="links-columns">
               <ul className="links-column">
                 <li>
@@ -54,7 +54,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-contact">
-            <h4>Contact Me</h4>
+            <h4 style={{ color: "#3498db" }}>Contact Me</h4>
             <ul>
               <li>
                 <FaEnvelope className="contact-icon" /> sajjadkhan55@gmail.com
@@ -71,7 +71,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <div className="social-links">
+          {/* <div className="social-links">
             <a
               href="https://github.com"
               target="_blank"
@@ -93,7 +93,7 @@ const Footer = () => {
             >
               <FaTwitter className="social-icon" />
             </a>
-          </div>
+          </div> */}
           <p>
             &copy; {new Date().getFullYear()} Sajjad Husain Khan. All rights
             reserved.

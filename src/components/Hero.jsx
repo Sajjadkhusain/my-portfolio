@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaFileDownload,
-  FaLongArrowAltRight,
-} from "react-icons/fa";
-import { HiMail } from "react-icons/hi";
+import { FaGithub, FaLongArrowAltRight } from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";
+import { TiSocialLinkedinCircular } from "react-icons/ti";
+import { MdOutlineMailOutline } from "react-icons/md";
 import "../styles/hero.css";
 
 const Hero = () => {
@@ -116,7 +113,6 @@ const Hero = () => {
             <motion.button
               whileHover={{
                 scale: 1.05,
-                // backgroundColor: "#2c3e50",
                 background: "linear-gradient(90deg, #9b59b6, #3498db)",
                 color: "white",
               }}
@@ -124,40 +120,42 @@ const Hero = () => {
               onClick={downloadResume}
               className="hero-btn resume-btn"
             >
-              <FaFileDownload className="btn-icon" />
               Download CV
+              <FiDownload className="btn-icon" />
             </motion.button>
-          </motion.div>
-
-          <motion.div
-            className="hero-social"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-          >
-            {[
-              { icon: <FaGithub />, url: "https://github.com" },
-              {
-                icon: <FaLinkedin />,
-                url: "https://www.linkedin.com/in/sajjad-husain-khan-980ba6a3/",
-              },
-              { icon: <HiMail />, url: "mailto:sajjadkhan55@gmail.com" },
-            ].map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link"
-                whileHover={{
-                  y: -5,
-                  scale: 1.1,
-                  color: "#3498db",
-                }}
-              >
-                {social.icon}
-              </motion.a>
-            ))}
+            <motion.div
+              className="hero-social"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5 }}
+            >
+              {[
+                // { icon: <FaGithub />, url: "https://github.com" },
+                {
+                  icon: <TiSocialLinkedinCircular />,
+                  url: "https://www.linkedin.com/in/sajjad-husain-khan-980ba6a3/",
+                },
+                {
+                  icon: <MdOutlineMailOutline />,
+                  url: "mailto:sajjadkhan55@gmail.com",
+                },
+              ].map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-link"
+                  whileHover={{
+                    y: -5,
+                    scale: 1.1,
+                    color: "#3498db",
+                  }}
+                >
+                  {social.icon}
+                </motion.a>
+              ))}
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
