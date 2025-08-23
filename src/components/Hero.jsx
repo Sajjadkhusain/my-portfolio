@@ -16,8 +16,6 @@ const Hero = () => {
     link.click();
     document.body.removeChild(link);
   };
-
-  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,7 +51,6 @@ const Hero = () => {
     },
   };
 
-  // New image animation variants
   const imageAnimation = {
     hidden: {
       opacity: 0,
@@ -184,7 +181,7 @@ const Hero = () => {
                 onClick={downloadResume}
                 className="hero-btn resume-btn"
               >
-                Download CV sajjad
+                Download CV
                 <FiDownload className="btn-icon" />
               </motion.button>
             </div>
