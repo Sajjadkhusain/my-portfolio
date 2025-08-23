@@ -184,7 +184,7 @@ const Hero = () => {
                 onClick={downloadResume}
                 className="hero-btn resume-btn"
               >
-                Download CV
+                Download CV sajjad
                 <FiDownload className="btn-icon" />
               </motion.button>
             </div>
