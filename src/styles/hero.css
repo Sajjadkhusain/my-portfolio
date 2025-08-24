@@ -1,32 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
 .hero {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
   min-height: 100vh;
-  padding: 6rem 2rem 2rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   font-family: "Poppins", sans-serif;
 }
 
-.hero-container {
+.container {
   max-width: 1200px;
-  width: 100%;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
+  padding: 0 1.5rem;
 }
 
 .hero-content {
-  flex: 1;
-  max-width: 600px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.hero-text {
+  flex: 1;
 }
 
 .hero-subtitle {
@@ -34,7 +33,6 @@
   color: #3498db;
   margin-bottom: 0.5rem;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
   line-height: 1.4;
 }
 
@@ -49,6 +47,10 @@
   letter-spacing: -0.5px;
 }
 
+.description-container {
+  max-width: 600px;
+}
+
 .hero-description {
   font-size: 1rem;
   color: #34495e;
@@ -60,9 +62,9 @@
 
 .hero-buttons {
   display: flex;
-  flex-direction: column; /* Change to column layout */
+  flex-direction: column;
   gap: 1rem;
-  margin-bottom: 1rem; /* Reduced margin */
+  margin-bottom: 1rem;
 }
 
 .buttons-row {
@@ -114,7 +116,7 @@
 .hero-social {
   display: flex;
   gap: 1.5rem;
-  margin-top: 0.5rem; /* Add space between buttons and social icons */
+  margin-top: 0.5rem;
 }
 
 .social-link {
@@ -130,178 +132,118 @@
   transform: translateY(-5px);
 }
 
-.hero-image {
+.hero-image-container {
   flex: 1;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-top: -3rem;
 }
 
-.image-wrapper {
-  width: 380px;
-  height: 380px;
-  max-width: 100%;
+.image-card {
   position: relative;
+  display: inline-block;
+  border-radius: 24px;
+  background: white;
+  padding: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.profile-image {
+.hero-img {
   width: 100%;
-  height: 100%;
+  max-width: 380px;
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 16px;
   object-fit: cover;
-  border-radius: 40px;
-  border: 8px solid white;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.5s ease;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
 }
 
-.image-wrapper:hover .profile-image {
-  transform: scale(1.03);
-}
 
-@media only screen and (max-width: 1200px) {
-  .hero-container {
-    padding: 0 2rem;
-  }
-
+@media (max-width: 1200px) {
   .hero-title {
     font-size: 2.2rem;
   }
-
-  .image-wrapper {
-    width: 340px;
-    height: 340px;
+  .hero-content {
+    gap: 4rem;
   }
 }
 
-@media only screen and (max-width: 992px) {
-  .hero {
-    padding: 7rem 2rem 2rem;
-  }
-
-  .hero-container {
-    padding-top: 20px;
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-    align-items: center;
-  }
-
+@media (max-width: 1024px) {
   .hero-content {
-    max-width: 100%;
-    align-items: flex-start;
-    text-align: left;
+    gap: 3.5rem;
   }
 
-  .hero-description {
-    margin: 0 0 2rem 0;
+  .hero-img {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 3.5rem;
+  }
+
+  .description-container {
     max-width: 100%;
+  }
+
+  .hero-text {
     text-align: left;
+    width: 100%;
   }
 
   .buttons-row {
     justify-content: flex-start;
-    flex-wrap: nowrap;
-  }
-
-  .hero-social {
-    justify-content: flex-start;
-  }
-
-  .image-wrapper {
-    width: 300px;
-    height: 300px;
-    margin-top: 2rem;
-    align-self: center;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .hero-title {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-    line-height: 1.3;
-  }
-
-  .hero-description {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    text-align: left;
-  }
-
+@media (max-width: 768px) {
   .hero-btn {
     padding: 0.55rem 1rem;
     font-size: 0.85rem;
     min-width: 120px;
   }
 
-  .btn-icon {
-    font-size: 0.9rem;
+  .hero {
+    padding: 5rem 0;
   }
 
-  .image-wrapper {
-    width: 280px;
-    height: 280px;
-    border-width: 6px;
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .buttons-row {
+    justify-content: flex-start;
   }
 }
 
-@media only screen and (max-width: 640px) {
+@media (max-width: 640px) {
   .hero {
-    padding: 6rem 1.5rem 2rem;
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 1.2rem;
   }
 
   .hero-title {
     font-size: 1.8rem;
-  }
-
-  .buttons-row {
-    flex-direction: row;
-    align-items: flex-start;
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .hero-btn {
-    width: auto;
-    max-width: none;
-    flex-shrink: 0;
-  }
-
-  .image-wrapper {
-    width: 250px;
-    height: 250px;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .hero {
-    padding: 5rem 1rem 2rem;
-  }
-
-  .hero-title {
-    font-size: 1.7rem;
-    letter-spacing: -0.2px;
-    line-height: 1.2;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    line-height: 1.3;
   }
 
   .buttons-row {
@@ -312,6 +254,7 @@
     justify-content: flex-start;
     overflow-x: auto;
     padding-bottom: 0.5rem;
+    width: 100%;
   }
 
   .hero-btn {
@@ -335,15 +278,32 @@
   .social-link {
     font-size: 1.8rem;
   }
+
+  .hero-img {
+    max-width: 280px;
+  }
 }
 
-@media only screen and (max-width: 400px) {
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 0;
+  }
+
   .hero-title {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+    letter-spacing: -0.2px;
+    line-height: 1.2;
   }
 
   .hero-subtitle {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .buttons-row {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow-x: visible;
   }
 
   .hero-btn {
@@ -361,13 +321,12 @@
     font-size: 0.8rem;
   }
 
-  .image-wrapper {
-    width: 220px;
-    height: 220px;
+  .hero-img {
+    max-width: 240px;
   }
 }
 
-@media only screen and (max-width: 360px) {
+@media (max-width: 360px) {
   .hero-title {
     font-size: 1.5rem;
     line-height: 1.2;
@@ -386,40 +345,378 @@
   .social-link {
     font-size: 1.6rem;
   }
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+.hero {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
 }
 
-@media only screen and (max-width: 320px) {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #3498db;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.hero-title {
+  padding-top: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  font-family: "Playfair Display", serif;
+  letter-spacing: -0.5px;
+}
+
+.description-container {
+  max-width: 600px;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  text-align: left;
+  hyphens: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.buttons-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  outline: none;
+  min-width: 140px;
+  justify-content: center;
+  height: auto;
+  white-space: nowrap;
+}
+
+.contact-btn {
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  color: white;
+}
+
+.resume-btn {
+  background: transparent;
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+.hero-social {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.social-link {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.social-link:hover {
+  color: #3498db;
+  transform: translateY(-5px);
+}
+
+.hero-image-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem; /* Added padding for image */
+}
+
+.image-card {
+  position: relative;
+  display: inline-block;
+  border-radius: 24px;
+  background: white;
+  padding: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
   .hero-title {
-    font-size: 1.4rem;
+    font-size: 2.2rem;
+  }
+  .hero-content {
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    gap: 3.5rem;
   }
 
-  .image-wrapper {
-    width: 200px;
-    height: 200px;
+  .hero-img {
+    max-width: 340px;
   }
 
-  .hero-subtitle {
-    font-size: 0.9rem;
+  .hero-image-container {
+    padding-top: 1.5rem; /* Adjusted padding for medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 3.5rem;
   }
 
-  .hero-btn {
-    padding: 0.35rem 0.6rem;
-    font-size: 0.65rem;
-    min-width: 100px;
+  .description-container {
+    max-width: 100%;
   }
 
-  .btn-icon {
-    font-size: 0.7rem;
-  }
-
-  .hero-description {
-    font-size: 0.85rem;
-    line-height: 1.4;
+  .hero-text {
+    text-align: left;
+    width: 100%;
   }
 
   .buttons-row {
-    display: flex;
+    justify-content: flex-start;
+  }
+
+  .hero-image-container {
+    padding-top: 0; /* Reset padding when image is below text */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+    min-width: 120px;
+  }
+
+  .hero {
+    padding: 5rem 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .buttons-row {
+    justify-content: flex-start;
+  }
+
+  .hero-image-container {
+    padding-top: 1rem; /* Added padding for smaller screens */
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 1.2rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .buttons-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
     flex-wrap: nowrap;
-    overflow: visible;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .hero-btn {
+    width: auto;
+    justify-content: center;
+    min-width: unset;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .btn-icon {
+    font-size: 0.85rem;
+  }
+
+  .hero-social {
+    gap: 1.2rem;
+    justify-content: flex-start;
+  }
+
+  .social-link {
+    font-size: 1.8rem;
+  }
+
+  .hero-img {
+    max-width: 280px;
+  }
+
+  .hero-image-container {
+    padding-top: 1.5rem; /* Increased padding for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+    letter-spacing: -0.2px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .buttons-row {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow-x: visible;
+  }
+
+  .hero-btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.75rem;
+    min-width: 120px;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .btn-icon {
+    font-size: 0.8rem;
+  }
+
+  .hero-img {
+    max-width: 240px;
+  }
+
+  .hero-image-container {
+    padding-top: 2rem; /* More padding for very small screens */
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.7rem;
+    min-width: 110px;
+  }
+
+  .btn-icon {
+    font-size: 0.75rem;
+  }
+
+  .social-link {
+    font-size: 1.6rem;
+  }
+
+  .hero-image-container {
+    padding-top: 1.5rem; /* Adjusted for smallest screens */
   }
 }
