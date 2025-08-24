@@ -132,13 +132,13 @@ const Hero = () => {
                       icon: <TiSocialLinkedinCircular />,
                       url: "https://www.linkedin.com/in/sajjad-husain-khan-980ba6a3/",
                     },
-                    {
-                      icon: <FaGithub />,
-                      url: "https://github.com/yourusername",
-                    },
+                    // {
+                    //   icon: <FaGithub />,
+                    //   url: "https://github.com/yourusername",
+                    // },
                     {
                       icon: <MdOutlineMailOutline />,
-                      url: "mailto:sajjadkhan55@gmail.com",
+                      url: "mailto:sajjadkhan5544@gmail.com",
                     },
                   ].map((social, index) => (
                     <motion.a
