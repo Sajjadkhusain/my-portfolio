@@ -25,13 +25,12 @@ function AppContent() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = () => setIsLoading(true);
-    const handleComplete = () => setIsLoading(false);
+    setIsLoading(true);
 
-    // Simulate loading delay (you can adjust this)
+    // Simulate loading delay
     const timer = setTimeout(() => {
-      handleComplete();
-    }, 800);
+      setIsLoading(false);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [location]);
@@ -48,7 +47,7 @@ function AppContent() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
           >
             <Suspense fallback={<Loader />}>
               <Routes location={location}>

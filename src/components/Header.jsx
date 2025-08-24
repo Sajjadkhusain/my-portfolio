@@ -7,7 +7,6 @@ import "../styles/header.css";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isNavigating, setIsNavigating] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -69,12 +68,8 @@ const Header = () => {
                 <NavLink
                   to={link.path}
                   className={({ isActive }) => (isActive ? "active" : "")}
-                  onClick={() => setIsNavigating(true)}
                 >
                   {link.name}
-                  {isNavigating && location.pathname === link.path && (
-                    <span className="loading-dot">.</span>
-                  )}
                 </NavLink>
               </motion.li>
             ))}

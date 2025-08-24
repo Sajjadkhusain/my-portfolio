@@ -57,7 +57,7 @@ const Footer = () => {
             <h4 style={{ color: "#3498db" }}>Contact Me</h4>
             <ul>
               <li>
-                <FaEnvelope className="contact-icon" /> sajjadkhan55@gmail.com
+                <FaEnvelope className="contact-icon" /> sajjadkhan5544@gmail.com
               </li>
               <li>
                 <FaPhoneAlt className="contact-icon" /> +91 9764937392
