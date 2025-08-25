@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import "../styles/contact.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -53,95 +54,135 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
+        <motion.h2
+          className="section-titles"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          Let's Work Together
+        </motion.h2>
+
+        <motion.p
+          className="section-subtitle"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          Got an idea or project you'd like to explore? I'd be happy to connect.
+          Together, we can build something great.
+        </motion.p>
 
         <div className="contact-container">
+          {/* Contact Information Card */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="contact-info"
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true, margin: "-50px" }}
+            className="contact-card"
           >
-            <h3 className="contact-subtitle">Contact Information</h3>
-            <p className="contact-text">
-              Feel free to reach out to me for any questions or opportunities.
-              I'll get back to you as soon as possible.
-            </p>
+            <p className="contact-text">Get in Touch</p>
 
             <ul className="contact-details">
               <motion.li
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
+                className="detail-item"
               >
-                <FaMapMarkerAlt className="contact-icon" />
-                <span>123 Developer Street, Tech City, TC 12345</span>
+                <div className="icon-wrapper">
+                  <FaMapMarkerAlt className="contact-icons" />
+                </div>
+                <div className="detail-content">
+                  <span className="detail-label">Location</span>
+                  <span className="detail-value">Akola, India</span>
+                </div>
               </motion.li>
               <motion.li
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
+                className="detail-item"
               >
-                <FaPhone className="contact-icon" />
-                <span>+1 (123) 456-7890</span>
+                <div className="icon-wrapper">
+                  <FaPhone className="contact-icons" />
+                </div>
+                <div className="detail-content">
+                  <span className="detail-label">Phone</span>
+                  <span className="detail-value">+91 9764937392</span>
+                </div>
               </motion.li>
               <motion.li
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
+                className="detail-item"
               >
-                <FaEnvelope className="contact-icon" />
-                <span>john.doe@example.com</span>
+                <div className="icon-wrapper">
+                  <FaEnvelope className="contact-icons" />
+                </div>
+                <div className="detail-content">
+                  <span className="detail-label">Email</span>
+                  <span className="detail-value">sajjadkhan5544@gmail.com</span>
+                </div>
+              </motion.li>
+              <motion.li
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="detail-item"
+              >
+                <div className="icon-wrapper availability-icon">
+                  <div className="green-circle"></div>
+                </div>
+                <div className="detail-content">
+                  <span className="detail-label">Current Availability</span>
+                  <span className="available-content">
+                    Available for new opportunities
+                  </span>
+                  <span className="detail-value">
+                    I'm currently accepting new and exciting opportunities and
+                    would love to discuss how we can work together to achieve
+                    great results.
+                  </span>
+                </div>
               </motion.li>
             </ul>
-
-            <div className="contact-social">
-              <motion.a
-                whileHover={{ y: -5 }}
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                <FaGithub className="social-icon" />
-              </motion.a>
-              <motion.a
-                whileHover={{ y: -5 }}
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin className="social-icon" />
-              </motion.a>
-            </div>
           </motion.div>
 
+          {/* Contact Form Card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="contact-form"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true, margin: "-50px" }}
+            className="contact-card form-card"
           >
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your Name"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Your Email"
-                  required
-                />
+            <div className="card-header">
+              <h3 className="contact-subtitle">Send a Message</h3>
+              <div className="card-divider"></div>
+            </div>
+            <form onSubmit={handleSubmit} className="contact-form">
+              <div className="form-row">
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
               </div>
               <div className="form-group">
                 <input
@@ -171,7 +212,7 @@ const Contact = () => {
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
-                  "Sending..."
+                  <div className="loading-spinner"></div>
                 ) : (
                   <>
                     <FaPaperPlane className="btn-icon" />
@@ -185,6 +226,7 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="submit-success"
                 >
+                  <span className="success-check">✓</span>
                   Message sent successfully!
                 </motion.div>
               )}
