@@ -14,13 +14,14 @@
   z-index: 2;
 }
 
-.section-title {
-  font-size: 2.5rem;
+.section-titles {
+  font-size: 2.3rem;
   text-align: center;
   color: #1f2937;
   margin-bottom: 1rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: #3498db;
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -156,7 +157,7 @@
     padding: 3.5rem 0;
   }
 
-  .section-title {
+  .section-titles {
     font-size: 2.2rem;
   }
 
@@ -202,7 +203,7 @@
     padding: 3rem 0;
   }
 
-  .section-title {
+  .section-titles {
     font-size: 2rem;
   }
 

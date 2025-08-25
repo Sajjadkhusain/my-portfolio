@@ -111,7 +111,7 @@ const Skills = () => {
     <section id="skills" className="skills">
       <div className="container">
         <motion.h2
-          className="section-title"
+          className="section-titles"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
