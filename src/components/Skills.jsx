@@ -95,14 +95,35 @@ const Skills = () => {
   };
 
   const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 30, opacity: 0, scale: 0.9 },
     visible: {
       y: 0,
       opacity: 1,
+      scale: 1,
       transition: {
         type: "spring",
         stiffness: 100,
         damping: 12,
+      },
+    },
+  };
+
+  const iconVariants = {
+    hidden: { rotate: -180, opacity: 0 },
+    visible: {
+      rotate: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 150,
+        delay: 0.2,
+      },
+    },
+    hover: {
+      rotate: 360,
+      scale: 1.1,
+      transition: {
+        duration: 0.5,
       },
     },
   };
@@ -148,15 +169,36 @@ const Skills = () => {
                 transition: { duration: 0.2 },
               }}
             >
-              <div
+              <motion.div
                 className="skill-icon"
                 style={{ color: skill.color }}
                 aria-hidden="true"
+                variants={iconVariants}
+                initial="hidden"
+                whileInView="visible"
+                whileHover="hover"
+                viewport={{ once: true }}
               >
                 {skill.icon}
-              </div>
-              <h3 className="skill-name">{skill.name}</h3>
-              <p className="skill-description">{skill.description}</p>
+              </motion.div>
+              <motion.h3
+                className="skill-name"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: index * 0.1 + 0.3 }}
+                viewport={{ once: true }}
+              >
+                {skill.name}
+              </motion.h3>
+              <motion.p
+                className="skill-description"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: index * 0.1 + 0.4 }}
+                viewport={{ once: true }}
+              >
+                {skill.description}
+              </motion.p>
               <div className="skill-progress-wrapper">
                 <div className="skill-progress">
                   <motion.div
@@ -164,7 +206,7 @@ const Skills = () => {
                     whileInView={{ width: `${skill.level}%` }}
                     transition={{
                       duration: 1.2,
-                      delay: index * 0.1,
+                      delay: index * 0.1 + 0.5,
                       ease: "easeOut",
                     }}
                     viewport={{ once: true }}
@@ -173,7 +215,15 @@ const Skills = () => {
                     aria-label={`${skill.name} proficiency: ${skill.level}%`}
                   />
                 </div>
-                <span className="progress-value">{skill.level}%</span>
+                <motion.span
+                  className="progress-value"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: index * 0.1 + 0.7 }}
+                  viewport={{ once: true }}
+                >
+                  {skill.level}%
+                </motion.span>
               </div>
             </motion.div>
           ))}
