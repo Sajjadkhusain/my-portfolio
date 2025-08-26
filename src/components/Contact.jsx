@@ -7,7 +7,6 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import "../styles/contact.css";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -76,80 +75,81 @@ const Contact = () => {
         </motion.p>
 
         <div className="contact-container">
-          {/* Contact Information Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="contact-card"
-          >
-            <p className="contact-text">Get in Touch</p>
+          {/* Left Column - Contact Info and Availability Cards */}
+          <div className="left-column">
+            {/* Contact Information Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="contact-card"
+            >
+              <h3 className="contact-subtitle">Get in Touch</h3>
+              <div className="card-divider"></div>
 
-            <ul className="contact-details">
-              <motion.li
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="detail-item"
-              >
-                <div className="icon-wrapper">
-                  <FaMapMarkerAlt className="contact-icons" />
-                </div>
-                <div className="detail-content">
-                  <span className="detail-label">Location</span>
+              <ul className="contact-details">
+                <motion.li
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="detail-item"
+                >
+                  <div className="icon-wrapper">
+                    <FaMapMarkerAlt className="contact-icons" />
+                  </div>
                   <span className="detail-value">Akola, India</span>
-                </div>
-              </motion.li>
-              <motion.li
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="detail-item"
-              >
-                <div className="icon-wrapper">
-                  <FaPhone className="contact-icons" />
-                </div>
-                <div className="detail-content">
-                  <span className="detail-label">Phone</span>
+                </motion.li>
+                <motion.li
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="detail-item"
+                >
+                  <div className="icon-wrapper">
+                    <FaPhone className="contact-icons" />
+                  </div>
                   <span className="detail-value">+91 9764937392</span>
-                </div>
-              </motion.li>
-              <motion.li
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="detail-item"
-              >
-                <div className="icon-wrapper">
-                  <FaEnvelope className="contact-icons" />
-                </div>
-                <div className="detail-content">
-                  <span className="detail-label">Email</span>
+                </motion.li>
+                <motion.li
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="detail-item"
+                >
+                  <div className="icon-wrapper">
+                    <FaEnvelope className="contact-icons" />
+                  </div>
                   <span className="detail-value">sajjadkhan5544@gmail.com</span>
-                </div>
-              </motion.li>
-              <motion.li
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="detail-item"
-              >
-                <div className="icon-wrapper availability-icon">
-                  <div className="green-circle"></div>
-                </div>
-                <div className="detail-content">
-                  <span className="detail-label">Current Availability</span>
-                  <span className="available-content">
-                    Available for new opportunities
-                  </span>
-                  <span className="detail-value">
-                    I'm currently accepting new and exciting opportunities and
-                    would love to discuss how we can work together to achieve
-                    great results.
-                  </span>
-                </div>
-              </motion.li>
-            </ul>
-          </motion.div>
+                </motion.li>
+              </ul>
+            </motion.div>
 
-          {/* Contact Form Card */}
+            {/* Availability Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="contact-card availability-card"
+            >
+              <h3 className="contact-subtitle">Current Availability</h3>
+              <div className="card-divider"></div>
+
+              <div className="availability-content">
+                <div className="availability-status">
+                  <div className="status-indicator">
+                    <div className="green-circle"></div>
+                    <span>Available for new opportunities</span>
+                  </div>
+                </div>
+                <p className="availability-description">
+                  I'm currently accepting new and exciting opportunities and
+                  would love to discuss how we can work together to achieve
+                  great results.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Column - Contact Form Card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -200,7 +200,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Your Message"
-                  rows="5"
+                  rows="4"
                   required
                 ></textarea>
               </div>
