@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "../styles/hero.css";
 import { FaGithub, FaLongArrowAltRight } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
@@ -8,7 +9,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 const Hero = () => {
   const resumeUrl = "/assets/resume.pdf";
-
+  const navigate = useNavigate();
   const downloadResume = () => {
     const link = document.createElement("a");
     link.href = resumeUrl;
@@ -43,7 +44,9 @@ const Hero = () => {
   };
 
   const titleText = "Full Stack Developer";
-
+  const handleWork = () => {
+    navigate("/projects");
+  };
   return (
     <div>
       <section id="hero" className="hero">
@@ -101,7 +104,7 @@ const Hero = () => {
                       background: "linear-gradient(90deg, #9b59b6, #3498db)",
                     }}
                     whileTap={{ scale: 0.95 }}
-                    href="#projects"
+                    onClick={handleWork}
                     className="hero-btn contact-btn"
                   >
                     View My Work <FaLongArrowAltRight className="btn-icon" />
