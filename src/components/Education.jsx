@@ -47,27 +47,27 @@ const Education = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
+        staggerChildren: 0.2, // Reduced from 0.3 for faster animation
+        delayChildren: 0.1, // Reduced from 0.2 for faster animation
       },
     },
   };
 
   // Item animation variants
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 }, // Reduced from y:50 for less movement
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         type: "spring",
-        stiffness: 100,
-        damping: 15,
+        stiffness: 120, // Increased for snappier animation
+        damping: 12, // Reduced for less bounce
       },
     },
     hover: {
-      y: -10,
-      boxShadow: "0 15px 35px rgba(0, 0, 0, 0.1)",
+      y: -8, // Reduced from -10 for less movement
+      boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)", // Lighter shadow
       transition: {
         type: "spring",
         stiffness: 400,
@@ -76,7 +76,7 @@ const Education = () => {
     },
   };
 
-  // Icon animation variants
+  // Icon animation variants with 360 rotation
   const iconVariants = {
     initial: { scale: 0, rotate: -180 },
     animate: {
@@ -86,27 +86,28 @@ const Education = () => {
         type: "spring",
         stiffness: 260,
         damping: 20,
-        delay: 0.2,
+        delay: 0.1, // Reduced from 0.2
       },
     },
     hover: {
       scale: 1.1,
-      rotate: 10,
+      rotate: 360,
       transition: {
         type: "spring",
         stiffness: 300,
+        duration: 0.6, // Reduced from 0.8
       },
     },
   };
 
   // Text animation variants
   const textVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, x: -15 }, // Reduced from x: -20
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.4, // Reduced from 0.5
         ease: "easeOut",
       },
     },
@@ -116,21 +117,30 @@ const Education = () => {
     <section id="education" className="education">
       <div className="container">
         <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: -30 }}
+          className="education-title"
+          initial={{ opacity: 0, y: -20 }} // Reduced from y: -30
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }} // Reduced from 0.6
           viewport={{ once: true }}
         >
           Education
         </motion.h2>
-
+        <motion.p
+          className="section-subtitle"
+          initial={{ opacity: 0, y: 15 }} // Reduced from y: 20
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }} // Reduced delay
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          A continuous journey of gaining knowledge, developing skills, and
+          shaping a better future.
+        </motion.p>
         <motion.div
           className="education-container"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }} // Reduced from 0.3
         >
           {educationData.map((edu, index) => (
             <motion.div
@@ -151,7 +161,6 @@ const Education = () => {
                   <FaGraduationCap className="icon" />
                 ) : (
                   <GiOpenBook className="icon" />
-                  // <FaUniversity className="icon" />
                 )}
               </motion.div>
               <div className="education-content">
@@ -161,21 +170,21 @@ const Education = () => {
                 <motion.h4
                   className="education-institution"
                   variants={textVariants}
-                  transition={{ delay: 0.1 }}
+                  transition={{ delay: 0.05 }} // Reduced from 0.1
                 >
                   {edu.institution}
                 </motion.h4>
                 <motion.span
                   className="education-year"
                   variants={textVariants}
-                  transition={{ delay: 0.2 }}
+                  transition={{ delay: 0.1 }} // Reduced from 0.2
                 >
                   {edu.year}
                 </motion.span>
                 <motion.p
                   className="education-description"
                   variants={textVariants}
-                  transition={{ delay: 0.3 }}
+                  transition={{ delay: 0.15 }} // Reduced from 0.3
                 >
                   {edu.description}
                 </motion.p>
