@@ -1,5 +1,6 @@
 .education {
   background-color: #f9f9f9;
+  overflow: hidden;
 }
 
 .education-container {
@@ -23,9 +24,11 @@
   margin-bottom: 2rem;
   position: relative;
   background: white;
+  border: 1px solid #3498db;
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transform-origin: center;
 }
 
 .education-icon {
@@ -79,6 +82,23 @@
   font-size: 1rem;
   color: #34495e;
   line-height: 1.6;
+}
+
+/* Animation for the timeline */
+@keyframes timelinePulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.education-container::before {
+  animation: timelinePulse 2s infinite ease-in-out;
 }
 
 @media (max-width: 768px) {
