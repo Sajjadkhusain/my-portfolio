@@ -8,6 +8,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "./components/Header";
 import Loader from "./components/Loader";
+import { ThemeProvider } from "./context/ThemeContext";
 import "./App.css";
 
 const Home = lazy(() => import("./components/Hero"));
@@ -26,12 +27,9 @@ function AppContent() {
 
   useEffect(() => {
     setIsLoading(true);
-
-    // Simulate loading delay
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 500);
-
     return () => clearTimeout(timer);
   }, [location]);
 
@@ -84,11 +82,13 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className="app">
-        <AppContent />
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="app">
+          <AppContent />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

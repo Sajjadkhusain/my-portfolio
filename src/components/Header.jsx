@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
 import "../styles/header.css";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { isDarkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +43,11 @@ const Header = () => {
   ];
 
   return (
-    <header className={`header ${scrolled ? "scrolled" : ""}`}>
+    <header
+      className={`header ${scrolled ? "scrolled" : ""} ${
+        isDarkMode ? "dark" : "light"
+      }`}
+    >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -51,10 +57,6 @@ const Header = () => {
         <div className="logo">
           <NavLink to="/">&lt; Sajjad Husain Khan /&gt;</NavLink>
         </div>
-
-        <button className="menu-toggle" onClick={toggleMenu} aria-label="Menu">
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </button>
 
         <nav className={`nav ${isOpen ? "open" : ""}`}>
           <ul>
@@ -75,6 +77,29 @@ const Header = () => {
             ))}
           </ul>
         </nav>
+        <div className="header-controls">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={
+              isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+            }
+          >
+            {isDarkMode ? (
+              <FaSun className="theme-icon" />
+            ) : (
+              <FaMoon className="theme-icon" />
+            )}
+          </button>
+
+          <button
+            className="menu-toggle"
+            onClick={toggleMenu}
+            aria-label="Menu"
+          >
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </motion.div>
     </header>
   );

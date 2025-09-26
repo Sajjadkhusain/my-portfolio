@@ -4,14 +4,23 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--header-bg);
+  box-shadow: 0 2px 10px var(--shadow-color);
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .header.scrolled {
-  background-color: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background-color: var(--header-bg);
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.header.dark {
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+.header.light {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .header-container {
@@ -27,13 +36,61 @@
 .logo a {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--text-primary);
   text-decoration: none;
-  background: linear-gradient(90deg, #3498db, #9b59b6);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  background-color: var(--border-color);
+  transform: scale(1.1);
+}
+
+.theme-icon {
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+  transform: rotate(180deg);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  z-index: 1001;
 }
 
 .nav {
@@ -56,7 +113,7 @@
 .nav ul li a {
   font-size: 1.1rem;
   font-weight: 500;
-  color: #2c3e50;
+  color: var(--text-primary);
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
@@ -65,7 +122,7 @@
 }
 
 .nav ul li a:hover {
-  color: #3498db;
+  color: var(--primary-color);
   transform: translateY(-2px);
 }
 
@@ -76,7 +133,11 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #3498db, #9b59b6);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   transition: width 0.3s ease;
 }
 
@@ -86,33 +147,7 @@
 }
 
 .nav ul li a.active {
-  color: #3498db;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #2c3e50;
-  background: none;
-  border: none;
-  padding: 0.5rem;
-  z-index: 1001;
-}
-
-.loading-dot {
-  display: inline-block;
-  animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+  color: var(--primary-color);
 }
 
 /* Responsive Breakpoints */
@@ -149,8 +184,8 @@
     display: none;
     width: 100%;
     order: 3;
-    background-color: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--surface-color);
+    box-shadow: 0 4px 10px var(--shadow-color);
   }
 
   .nav.open {
@@ -200,6 +235,15 @@
   .nav ul li {
     padding: 0 1.5rem;
   }
+
+  .header-controls {
+    gap: 0.5rem;
+  }
+
+  .theme-toggle {
+    font-size: 1.1rem;
+    padding: 0.4rem;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -213,51 +257,5 @@
 
   .menu-toggle {
     font-size: 1.4rem;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .logo a {
-    font-size: 1.4rem;
-  }
-
-  .header-container {
-    padding: 0.6rem 0.8rem;
-  }
-
-  .nav ul li {
-    padding: 0 1rem;
-  }
-
-  .nav ul li a {
-    font-size: 0.95rem;
-  }
-}
-
-@media only screen and (max-width: 360px) {
-  .logo a {
-    font-size: 1.3rem;
-  }
-
-  .nav ul li a {
-    font-size: 0.9rem;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .logo a {
-    font-size: 1.2rem;
-  }
-
-  .header-container {
-    padding: 0.5rem 0.6rem;
-  }
-
-  .nav ul li a {
-    font-size: 0.85rem;
-  }
-
-  .menu-toggle {
-    font-size: 1.3rem;
   }
 }

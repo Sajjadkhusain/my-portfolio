@@ -1,3 +1,37 @@
+:root {
+  /* Light theme colors */
+  --primary-color: #3498db;
+  --secondary-color: #9b59b6;
+  --background-color: #f5f5f5;
+  --surface-color: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-muted: #888888;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --card-bg: #ffffff;
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --footer-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.dark-theme {
+  /* Dark theme colors */
+  --primary-color: #4fa8db;
+  --secondary-color: #a86cc1;
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #888888;
+  --border-color: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --gradient-bg: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  --card-bg: #2d2d2d;
+  --header-bg: rgba(30, 30, 30, 0.9);
+  --footer-bg: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +41,9 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .app {
@@ -20,14 +55,17 @@ body {
 section {
   padding: 80px 20px;
   min-height: 100vh;
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease;
 }
 
-/* .section-title {
+/* Common section styles */
+.section-title {
   font-size: 2.5rem;
   margin-bottom: 40px;
   text-align: center;
   position: relative;
-  color: #2c3e50;
+  color: var(--text-primary);
 }
 
 .section-title::after {
@@ -38,9 +76,20 @@ section {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #3498db, #9b59b6);
-} */
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
   section {
     padding: 60px 15px;
@@ -49,4 +98,10 @@ section {
   .section-title {
     font-size: 2rem;
   }
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
