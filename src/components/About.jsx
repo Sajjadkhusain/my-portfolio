@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import "../styles/about.css";
+import { useTheme } from "../context/ThemeContext.js"; // Import the useTheme hook
 
 const About = () => {
+  const { isDarkMode } = useTheme(); // Get the current theme state
+
   return (
-    <section id="about" className="about">
+    <section id="about" className={`about ${isDarkMode ? "dark" : ""}`}>
       <div className="container">
         <div className="about-content">
           <motion.div
@@ -13,7 +16,9 @@ const About = () => {
             viewport={{ once: true }}
             className="about-text"
           >
-            <h3 className="about-subtitle">Sajjad Husain Khan</h3>
+            <h3 className={`about-subtitle ${isDarkMode ? "dark" : ""}`}>
+              Sajjad Husain Khan
+            </h3>
             <div className="description-container">
               <p className="about-description">
                 I'm a passionate Full Stack Developer with 8+ years of
@@ -42,7 +47,7 @@ const About = () => {
             className="about-image-container"
           >
             <motion.div
-              className="image-card"
+              className={`image-card ${isDarkMode ? "dark" : ""}`}
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
             >
@@ -56,7 +61,8 @@ const About = () => {
                 }}
               />
               <motion.div
-                className="experience-badge"
+                className={`experience-badge ${isDarkMode ? "dark" : ""}`}
+                // className="experience-badge"
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}

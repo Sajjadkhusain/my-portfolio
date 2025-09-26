@@ -3,6 +3,7 @@
   padding: 6rem 0;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .container {
@@ -15,10 +16,11 @@
   font-size: 2.8rem;
   text-align: center;
   margin-bottom: 4rem;
-  color: #2c3e50;
+  color: var(--text-primary);
   position: relative;
   font-weight: 800;
   letter-spacing: -0.5px;
+  transition: color 0.3s ease;
 }
 
 .section-title::after {
@@ -29,7 +31,11 @@
   transform: translateX(-50%);
   width: 100px;
   height: 5px;
-  background: linear-gradient(90deg, #3498db, #9b59b6);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   border-radius: 3px;
 }
 
@@ -57,6 +63,13 @@
   padding: 12px;
   box-shadow: 0 20px 25px -5px var(--shadow-color),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+/* White border for image card in dark mode */
+.image-card.dark {
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
 .about-img {
@@ -70,6 +83,13 @@
   transition: all 0.4s ease;
   position: relative;
   z-index: 1;
+  border: 3px solid transparent; /* Prepare for dark mode border */
+}
+
+/* White border for image in dark mode */
+.about-img.dark {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .experience-badge {
@@ -93,6 +113,31 @@
   justify-content: center;
   line-height: 1.2;
   border: 3px solid var(--surface-color);
+  transition: all 0.3s ease;
+}
+.experience-badge.dark {
+  position: absolute;
+  bottom: -20px;
+  right: -15px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(52, 152, 219, 0.4);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  border: 3px solid var(--surface-color);
+  transition: all 0.3s ease;
+}
+
+/* Update experience badge border for dark mode */
+.image-card.dark .experience-badge {
+  border: 3px solid rgba(255, 255, 255, 0.3);
 }
 
 .experience-badge span:first-child {
@@ -121,6 +166,12 @@
   position: relative;
   padding-bottom: 0.8rem;
   font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+/* Dark mode specific styles for the subtitle */
+.about-subtitle.dark {
+  color: var(--heading-color);
 }
 
 .about-description {
@@ -130,6 +181,7 @@
   line-height: 1.8;
   text-align: justify;
   hyphens: auto;
+  transition: color 0.3s ease;
 }
 
 /* Responsive Design */
@@ -198,6 +250,15 @@
 
   .experience-badge span:last-child {
     font-size: 0.85rem;
+  }
+
+  /* Adjust border for mobile */
+  .about-img.dark {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .image-card.dark {
+    border: 2px solid rgba(255, 255, 255, 0.2);
   }
 }
 
@@ -279,5 +340,14 @@
 
   .experience-badge span:last-child {
     font-size: 0.7rem;
+  }
+
+  /* Adjust border for small screens */
+  .about-img.dark {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .image-card.dark {
+    border: 2px solid rgba(255, 255, 255, 0.2);
   }
 }
