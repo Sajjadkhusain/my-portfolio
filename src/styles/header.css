@@ -49,6 +49,13 @@
   transition: all 0.3s ease;
 }
 
+/* Fix: Use .dark class instead of .dark-theme */
+.dark .logo a {
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
 .header-controls {
   display: flex;
   align-items: center;
@@ -150,6 +157,29 @@
   color: var(--primary-color);
 }
 
+/* ===== DARK MODE STYLES ===== */
+.dark .nav ul li a::after {
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+}
+
+.dark .nav ul li a:hover::after,
+.dark .nav ul li a.active::after {
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+}
+
+/* White hover color for links in dark mode */
+.dark .nav ul li a:hover {
+  color: #ffffff;
+}
+
+.dark .nav ul li a.active {
+  color: #ffffff;
+}
+
+.dark .nav ul li a.active:hover {
+  color: #ffffff;
+}
+
 /* Responsive Breakpoints */
 @media only screen and (max-width: 1200px) {
   .header-container {
@@ -210,6 +240,17 @@
   }
 
   .nav ul li a:hover {
+    transform: translateX(5px);
+  }
+
+  /* For mobile dark mode */
+  .dark .nav {
+    background-color: var(--surface-color);
+  }
+
+  /* Mobile dark mode hover colors */
+  .dark .nav ul li a:hover {
+    color: #ffffff;
     transform: translateX(5px);
   }
 
