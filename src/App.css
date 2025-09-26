@@ -2,6 +2,7 @@
   /* Light theme colors */
   --primary-color: #3498db;
   --secondary-color: #9b59b6;
+  --heading-color: #3498db;
   --background-color: #f5f5f5;
   --surface-color: #ffffff;
   --text-primary: #333333;
@@ -19,6 +20,7 @@
   /* Dark theme colors */
   --primary-color: #4fa8db;
   --secondary-color: #a86cc1;
+  --heading-color: #ffffff;
   --background-color: #121212;
   --surface-color: #1e1e1e;
   --text-primary: #ffffff;
@@ -31,7 +33,15 @@
   --header-bg: rgba(30, 30, 30, 0.9);
   --footer-bg: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
-
+/* Then update your footer CSS */
+.footer-about h3,
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--heading-color); /* Use the new variable */
+  transition: color 0.3s ease;
+}
 * {
   margin: 0;
   padding: 0;

@@ -8,14 +8,17 @@ import {
 import { MdLocationPin } from "react-icons/md";
 import "../styles/Footer.css";
 import { Link } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 const Footer = () => {
+  const { isDarkMode } = useTheme();
+
   return (
-    <footer className="footer">
+    <footer className={`footer ${isDarkMode ? "dark" : "light"}`}>
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-about">
-            <h3 style={{ color: "#3498db" }}>Sajjad Husain Khan</h3>
+            <h3>Sajjad Husain Khan</h3>
             <p>
               Full Stack Developer specializing in modern web technologies.
               Building responsive, scalable applications with clean code and
@@ -24,7 +27,7 @@ const Footer = () => {
           </div>
 
           <div className="footer-links">
-            <h4 style={{ color: "#3498db" }}>Quick Links</h4>
+            <h4>Quick Links</h4>
             <div className="links-columns">
               <ul className="links-column">
                 <li>
@@ -54,7 +57,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-contact">
-            <h4 style={{ color: "#3498db" }}>Contact Me</h4>
+            <h4>Contact Me</h4>
             <ul>
               <li>
                 <FaEnvelope className="contact-icon" /> sajjadkhan5544@gmail.com
@@ -71,29 +74,6 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          {/* <div className="social-links">
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub className="social-icon" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin className="social-icon" />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTwitter className="social-icon" />
-            </a>
-          </div> */}
           <p>
             &copy; {new Date().getFullYear()} Sajjad Husain Khan. All rights
             reserved.
