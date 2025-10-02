@@ -6,10 +6,13 @@ import { FaGithub, FaLongArrowAltRight } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { MdOutlineMailOutline } from "react-icons/md";
+import { useTheme } from "../context/ThemeContext";
 
 const Hero = () => {
   const resumeUrl = "/assets/resume.pdf";
   const navigate = useNavigate();
+  const { isDarkMode } = useTheme();
+
   const downloadResume = () => {
     const link = document.createElement("a");
     link.href = resumeUrl;
@@ -43,10 +46,19 @@ const Hero = () => {
     },
   };
 
+  // Create a custom whileHover animation that updates with theme changes
+  const getLetterHoverAnimation = (isDark) => ({
+    scale: 1.2,
+    color: isDark ? "#60a5fa" : "#3498db",
+    transition: { duration: 0.2 },
+  });
+
   const titleText = "Full Stack Developer";
+
   const handleWork = () => {
     navigate("/projects");
   };
+
   return (
     <div>
       <section id="hero" className="hero">
@@ -69,11 +81,11 @@ const Hero = () => {
                     key={index}
                     variants={letterAnimation}
                     style={{ display: "inline-block" }}
-                    whileHover={{
-                      scale: 1.2,
-                      color: "#3498db",
-                      transition: { duration: 0.2 },
+                    whileHover={getLetterHoverAnimation(isDarkMode)}
+                    animate={{
+                      color: isDarkMode ? "#f1f5f9" : "#2c3e50",
                     }}
+                    transition={{ duration: 0.3 }}
                   >
                     {char === " " ? "\u00A0" : char}
                   </motion.span>
@@ -135,10 +147,6 @@ const Hero = () => {
                       icon: <TiSocialLinkedinCircular />,
                       url: "https://www.linkedin.com/in/sajjad-husain-khan-980ba6a3/",
                     },
-                    // {
-                    //   icon: <FaGithub />,
-                    //   url: "https://github.com/yourusername",
-                    // },
                     {
                       icon: <MdOutlineMailOutline />,
                       url: "mailto:sajjadkhan5544@gmail.com",
@@ -153,7 +161,7 @@ const Hero = () => {
                       whileHover={{
                         y: -5,
                         scale: 1.1,
-                        color: "#3498db",
+                        color: isDarkMode ? "#60a5fa" : "#3498db",
                       }}
                       whileTap={{ scale: 0.9 }}
                     >
