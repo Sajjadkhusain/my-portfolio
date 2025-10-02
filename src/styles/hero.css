@@ -62,9 +62,11 @@
   white-space: nowrap;
 }
 
+/* Light theme buttons */
 .contact-btn {
   background: linear-gradient(90deg, #3498db, #9b59b6);
   color: white;
+  border: 2px solid transparent;
 }
 
 .resume-btn {
@@ -79,6 +81,11 @@
   transition: all 0.3s ease;
   cursor: pointer;
   display: inline-flex;
+}
+
+.social-link:hover {
+  color: #3498db;
+  transform: translateY(-5px);
 }
 
 /* Dark theme */
@@ -98,18 +105,27 @@
   color: #cbd5e1;
 }
 
-.dark-theme .resume-btn {
-  background: transparent;
-  color: #f1f5f9;
-  border: 2px solid #f1f5f9;
+/* Dark theme buttons */
+.dark-theme .contact-btn {
+  background: #1a2436;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+.dark-theme .resume-btn {
+  background: #1a2436;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dark theme social links */
 .dark-theme .social-link {
   color: #f1f5f9;
 }
 
 .dark-theme .social-link:hover {
   color: #60a5fa;
+  transform: translateY(-5px);
 }
 
 .dark-theme .image-card {
@@ -159,6 +175,8 @@
 
 .dark-theme .hero-btn:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background: #1e2b44;
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .btn-icon {
@@ -169,11 +187,6 @@
   display: flex;
   gap: 1.5rem;
   margin-top: 0.5rem;
-}
-
-.social-link:hover {
-  color: #3498db;
-  transform: translateY(-5px);
 }
 
 .hero-image-container {

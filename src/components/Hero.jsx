@@ -113,7 +113,6 @@ const Hero = () => {
                   <motion.a
                     whileHover={{
                       scale: 1.05,
-                      background: "linear-gradient(90deg, #9b59b6, #3498db)",
                     }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleWork}
@@ -124,8 +123,6 @@ const Hero = () => {
                   <motion.button
                     whileHover={{
                       scale: 1.05,
-                      background: "linear-gradient(90deg, #9b59b6, #3498db)",
-                      color: "white",
                     }}
                     whileTap={{ scale: 0.95 }}
                     onClick={downloadResume}
