@@ -5,6 +5,10 @@
   padding: 3.5rem 0; /* Reduced from 4rem */
 }
 
+.education.education-dark {
+  background-color: #151e31;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -37,6 +41,10 @@
   line-height: 1.6;
 }
 
+.education-dark .section-subtitle {
+  color: #a0aec0;
+}
+
 .education-container::before {
   content: "";
   position: absolute;
@@ -58,6 +66,12 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transform-origin: center;
   transition: all 0.3s ease;
+}
+
+.education-card-dark {
+  background: #1e293b;
+  border-color: #3498db;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .education-card:hover {
@@ -96,6 +110,10 @@
   font-weight: 600;
 }
 
+.education-degree-dark {
+  color: #e2e8f0;
+}
+
 .education-institution {
   font-size: 1.15rem; /* Reduced from 1.2rem */
   color: #3498db;
@@ -114,10 +132,19 @@
   font-weight: 500;
 }
 
+.education-year-dark {
+  color: #cbd5e0;
+  background: #2d3748;
+}
+
 .education-description {
   font-size: 0.95rem; /* Reduced from 1rem */
   color: #34495e;
   line-height: 1.6; /* Reduced from 1.7 */
+}
+
+.education-description-dark {
+  color: #a0aec0;
 }
 
 /* Animation for the timeline */
