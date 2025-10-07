@@ -6,6 +6,10 @@
   overflow: hidden;
 }
 
+.skills-dark {
+  background: #151e31;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -17,15 +21,22 @@
 .section-titles {
   font-size: 2.3rem;
   text-align: center;
-  color: #1f2937;
+  /* color: #1f2937; */
   margin-bottom: 1rem;
   font-weight: 700;
-  background-color: #3498db;
-  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  background: #3498db;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   padding-top: 2rem;
+}
+
+.section-titles-dark {
+  color: #ffffff;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
 }
 
 .section-subtitle {
@@ -38,6 +49,10 @@
   line-height: 1.6;
   font-size: 1.1rem;
   padding: 0 1rem;
+}
+
+.section-subtitle-dark {
+  color: #a0aec0;
 }
 
 .skills-container {
@@ -62,6 +77,12 @@
   backdrop-filter: blur(10px);
 }
 
+.skill-card-dark {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 1px solid #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 .skill-card::before {
   content: "";
   position: absolute;
@@ -75,6 +96,10 @@
   transition: transform 0.4s ease;
 }
 
+.skill-card-dark::before {
+  background-color: #ffffff;
+}
+
 .skill-card:hover::before {
   transform: scaleX(1);
 }
@@ -82,6 +107,10 @@
 .skill-card:hover {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   transform: translateY(-8px);
+}
+
+.skill-card-dark:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .skill-icon {
@@ -101,12 +130,20 @@
   font-weight: 700;
 }
 
+.skill-name-dark {
+  color: #e2e8f0;
+}
+
 .skill-description {
   color: #6b7280;
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 1.5rem;
   flex-grow: 1;
+}
+
+.skill-description-dark {
+  color: #a0aec0;
 }
 
 .skill-progress-wrapper {
@@ -125,6 +162,11 @@
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+.skill-progress-dark {
+  background: #2d3748;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
 .progress-bar {
   height: 100%;
   border-radius: 8px;
@@ -139,6 +181,10 @@
   color: #374151;
   min-width: 35px;
   text-align: right;
+}
+
+.progress-value-dark {
+  color: #e2e8f0;
 }
 
 /* Responsive Design */

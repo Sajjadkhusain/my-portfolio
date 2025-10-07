@@ -32,6 +32,10 @@
   padding-top: 1.9rem; /* Reduced from 1rem */
 }
 
+.education-title-dark {
+  color: #ffffff;
+}
+
 .section-subtitle {
   text-align: center;
   font-size: 1.05rem; /* Reduced from 1.1rem */

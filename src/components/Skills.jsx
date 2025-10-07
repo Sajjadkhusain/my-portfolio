@@ -9,8 +9,10 @@ import {
 } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiRedux, SiTypescript } from "react-icons/si";
 import "../styles/skills.css";
+import { useTheme } from "../context/ThemeContext";
 
 const Skills = () => {
+  const { isDarkMode } = useTheme();
   const skills = [
     {
       name: "HTML5",
@@ -129,10 +131,15 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="skills">
+    <section
+      id="skills"
+      className={`skills ${isDarkMode ? "skills-dark" : ""}`}
+    >
       <div className="container">
         <motion.h2
-          className="section-titles"
+          className={`section-titles ${
+            isDarkMode ? "section-titles-dark" : ""
+          }`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -142,7 +149,9 @@ const Skills = () => {
         </motion.h2>
 
         <motion.p
-          className="section-subtitle"
+          className={`section-subtitle ${
+            isDarkMode ? "section-subtitle-dark" : ""
+          }`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -163,7 +172,7 @@ const Skills = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="skill-card"
+              className={`skill-card ${isDarkMode ? "skill-card-dark" : ""}`}
               whileHover={{
                 y: -8,
                 transition: { duration: 0.2 },
@@ -182,7 +191,7 @@ const Skills = () => {
                 {skill.icon}
               </motion.div>
               <motion.h3
-                className="skill-name"
+                className={`skill-name ${isDarkMode ? "skill-name-dark" : ""}`}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: index * 0.1 + 0.3 }}
@@ -191,7 +200,9 @@ const Skills = () => {
                 {skill.name}
               </motion.h3>
               <motion.p
-                className="skill-description"
+                className={`skill-description ${
+                  isDarkMode ? "skill-description-dark" : ""
+                }`}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: index * 0.1 + 0.4 }}
@@ -200,7 +211,11 @@ const Skills = () => {
                 {skill.description}
               </motion.p>
               <div className="skill-progress-wrapper">
-                <div className="skill-progress">
+                <div
+                  className={`skill-progress ${
+                    isDarkMode ? "skill-progress-dark" : ""
+                  }`}
+                >
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
@@ -216,7 +231,9 @@ const Skills = () => {
                   />
                 </div>
                 <motion.span
-                  className="progress-value"
+                  className={`progress-value ${
+                    isDarkMode ? "progress-value-dark" : ""
+                  }`}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: index * 0.1 + 0.7 }}

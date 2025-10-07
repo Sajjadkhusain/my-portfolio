@@ -125,7 +125,9 @@ const Education = () => {
     >
       <div className="container">
         <motion.h2
-          className="education-title"
+          className={`education-title ${
+            isDarkMode ? "education-title-dark" : ""
+          }`}
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
