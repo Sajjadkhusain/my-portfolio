@@ -7,8 +7,10 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import "../styles/contact.css";
+import { useTheme } from "../context/ThemeContext";
 
 const Contact = () => {
+  const { isDarkMode } = useTheme();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,10 +53,15 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact">
+    <section
+      id="contact"
+      className={`contact ${isDarkMode ? "contact-dark" : ""}`}
+    >
       <div className="container">
         <motion.h2
-          className="section-titles"
+          className={`section-titles ${
+            isDarkMode ? "section-titles-dark" : ""
+          }`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -64,7 +71,9 @@ const Contact = () => {
         </motion.h2>
 
         <motion.p
-          className="section-subtitle"
+          className={`section-subtitle ${
+            isDarkMode ? "section-subtitle-dark" : ""
+          }`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -83,41 +92,89 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true, margin: "-50px" }}
-              className="contact-card"
+              className={`contact-card ${
+                isDarkMode ? "contact-card-dark" : ""
+              }`}
             >
-              <h3 className="contact-subtitle">Get in Touch</h3>
-              <div className="card-divider"></div>
+              <h3
+                className={`contact-subtitle ${
+                  isDarkMode ? "contact-subtitle-dark" : ""
+                }`}
+              >
+                Get in Touch
+              </h3>
+              <div
+                className={`card-divider ${
+                  isDarkMode ? "card-divider-dark" : ""
+                }`}
+              ></div>
 
               <ul className="contact-details">
                 <motion.li
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="detail-item"
+                  className={`detail-item ${
+                    isDarkMode ? "detail-item-dark" : ""
+                  }`}
                 >
-                  <div className="icon-wrapper">
+                  <div
+                    className={`icon-wrapper ${
+                      isDarkMode ? "icon-wrapper-dark" : ""
+                    }`}
+                  >
                     <FaMapMarkerAlt className="contact-icons" />
                   </div>
-                  <span className="detail-value">Akola, India</span>
+                  <span
+                    className={`detail-value ${
+                      isDarkMode ? "detail-value-dark" : ""
+                    }`}
+                  >
+                    Akola, India
+                  </span>
                 </motion.li>
                 <motion.li
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="detail-item"
+                  className={`detail-item ${
+                    isDarkMode ? "detail-item-dark" : ""
+                  }`}
                 >
-                  <div className="icon-wrapper">
+                  <div
+                    className={`icon-wrapper ${
+                      isDarkMode ? "icon-wrapper-dark" : ""
+                    }`}
+                  >
                     <FaPhone className="contact-icons" />
                   </div>
-                  <span className="detail-value">+91 9764937392</span>
+                  <span
+                    className={`detail-value ${
+                      isDarkMode ? "detail-value-dark" : ""
+                    }`}
+                  >
+                    +91 9764937392
+                  </span>
                 </motion.li>
                 <motion.li
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="detail-item"
+                  className={`detail-item ${
+                    isDarkMode ? "detail-item-dark" : ""
+                  }`}
                 >
-                  <div className="icon-wrapper">
+                  <div
+                    className={`icon-wrapper ${
+                      isDarkMode ? "icon-wrapper-dark" : ""
+                    }`}
+                  >
                     <FaEnvelope className="contact-icons" />
                   </div>
-                  <span className="detail-value">sajjadkhan5544@gmail.com</span>
+                  <span
+                    className={`detail-value ${
+                      isDarkMode ? "detail-value-dark" : ""
+                    }`}
+                  >
+                    sajjadkhan5544@gmail.com
+                  </span>
                 </motion.li>
               </ul>
             </motion.div>
@@ -128,19 +185,37 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               viewport={{ once: true, margin: "-50px" }}
-              className="contact-card availability-card"
+              className={`contact-card availability-card ${
+                isDarkMode ? "contact-card-dark availability-card-dark" : ""
+              }`}
             >
-              <h3 className="contact-subtitle">Current Availability</h3>
-              <div className="card-divider"></div>
+              <h3
+                className={`contact-subtitle ${
+                  isDarkMode ? "contact-subtitle-dark" : ""
+                }`}
+              >
+                Current Availability
+              </h3>
+              <div
+                className={`card-divider ${
+                  isDarkMode ? "card-divider-dark" : ""
+                }`}
+              ></div>
 
               <div className="availability-content">
                 <div className="availability-status">
                   <div className="status-indicator">
                     <div className="green-circle"></div>
-                    <span>Available for new opportunities</span>
+                    <span className={isDarkMode ? "status-text-dark" : ""}>
+                      Available for new opportunities
+                    </span>
                   </div>
                 </div>
-                <p className="availability-description">
+                <p
+                  className={`availability-description ${
+                    isDarkMode ? "availability-description-dark" : ""
+                  }`}
+                >
                   I'm currently accepting new and exciting opportunities and
                   would love to discuss how we can work together to achieve
                   great results.
@@ -155,11 +230,23 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true, margin: "-50px" }}
-            className="contact-card form-card"
+            className={`contact-card form-card ${
+              isDarkMode ? "contact-card-dark form-card-dark" : ""
+            }`}
           >
             <div className="card-header">
-              <h3 className="contact-subtitle">Send a Message</h3>
-              <div className="card-divider"></div>
+              <h3
+                className={`contact-subtitle ${
+                  isDarkMode ? "contact-subtitle-dark" : ""
+                }`}
+              >
+                Send a Message
+              </h3>
+              <div
+                className={`card-divider ${
+                  isDarkMode ? "card-divider-dark" : ""
+                }`}
+              ></div>
             </div>
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-row">
@@ -171,6 +258,7 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="Your Name"
                     required
+                    className={isDarkMode ? "input-dark" : ""}
                   />
                 </div>
                 <div className="form-group">
@@ -181,6 +269,7 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="Your Email"
                     required
+                    className={isDarkMode ? "input-dark" : ""}
                   />
                 </div>
               </div>
@@ -192,6 +281,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Subject"
                   required
+                  className={isDarkMode ? "input-dark" : ""}
                 />
               </div>
               <div className="form-group">
@@ -202,11 +292,12 @@ const Contact = () => {
                   placeholder="Your Message"
                   rows="4"
                   required
+                  className={isDarkMode ? "input-dark" : ""}
                 ></textarea>
               </div>
               <motion.button
                 type="submit"
-                className="submit-btn"
+                className={`submit-btn ${isDarkMode ? "submit-btn-dark" : ""}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 disabled={isSubmitting}
@@ -224,7 +315,9 @@ const Contact = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="submit-success"
+                  className={`submit-success ${
+                    isDarkMode ? "submit-success-dark" : ""
+                  }`}
                 >
                   <span className="success-check">✓</span>
                   Message sent successfully!
