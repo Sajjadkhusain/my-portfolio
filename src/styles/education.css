@@ -137,7 +137,9 @@
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
-
+.education-dark .education-institution {
+  color: #bfc4c9;
+}
 .education-year {
   display: inline-block;
   font-size: 0.9rem; /* Reduced from 0.95rem */
