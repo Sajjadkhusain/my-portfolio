@@ -16,11 +16,12 @@
 
 .section-titles {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
-  color: #2c3e50;
+  color: #3498db;
+  position: relative;
   font-weight: 700;
-  padding-top: 1rem;
+  padding-top: 1.9rem;
 }
 
 .section-titles-dark {
@@ -29,15 +30,11 @@
 
 .professional-summary {
   text-align: center;
-  font-size: 1.3rem;
-  margin-bottom: 3rem;
-  color: #34495e;
+  font-size: 1.05rem;
+  color: #7f8c8d;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
   line-height: 1.6;
-  font-weight: 400;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1rem;
 }
 
 .professional-summary-dark {
