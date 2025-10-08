@@ -7,6 +7,7 @@
 .projects-dark {
   background-color: #151e31;
 }
+
 .section-titles {
   text-align: center;
   font-size: 2rem;
@@ -15,17 +16,8 @@
   position: relative;
   font-weight: 700;
   padding-top: 1.9rem;
-  /* font-size: 2.3rem;
-  text-align: center;
-  
-  margin-bottom: 1rem;
-  font-weight: 700;
-  background: #3498db;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  padding-top: 2rem; */
 }
+
 .section-titles-dark {
   text-align: center;
   font-size: 2rem;
@@ -34,11 +26,6 @@
   position: relative;
   font-weight: 700;
   padding-top: 1.9rem;
-  /* color: #ffffff;
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
-  background-clip: unset; */
 }
 
 .section-title {
@@ -69,7 +56,7 @@
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  border: 2px solid #3498db; /* Light theme border color */
+  border: 2px solid #3498db;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -77,19 +64,19 @@
 
 .project-card-dark {
   background: #1e293b;
-  border-color: #364458; /* Dark theme border color */
+  border-color: #364458;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-  border-color: #2980b9; /* Slightly darker blue on hover for light theme */
+  border-color: #2980b9;
 }
 
 .project-card-dark:hover {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  border-color: #4a5c7a; /* Slightly lighter border on hover for dark theme */
+  border-color: #4a5c7a;
 }
 
 .project-content {
@@ -108,13 +95,13 @@
 
 .project-title-icon {
   font-size: 1.5rem;
-  color: #3498db; /* Light theme color */
+  color: #3498db;
   transition: color 0.3s ease;
 }
 
 /* Dark theme icon color */
 .projects-dark .project-title-icon {
-  color: #ffffff; /* White color for dark theme */
+  color: #ffffff;
 }
 
 .project-title {
@@ -208,16 +195,14 @@
   font-weight: bold;
   margin-right: 0.5rem;
 }
-.feature-item-dark::before {
-  content: "▹";
-  position: absolute;
-  left: 0;
-  color: #fff;
-  font-weight: bold;
-  margin-right: 0.5rem;
-}
+
 .feature-item-dark {
   color: #a0aec0;
+}
+
+/* Dark theme key feature indicator */
+.feature-item-dark::before {
+  color: #ffffff;
 }
 
 .project-footer {
@@ -254,7 +239,7 @@
 
 /* Dark theme footer icons */
 .projects-dark .footer-icon {
-  color: #ffffff; /* White color for dark theme */
+  color: #ffffff;
 }
 
 .footer-text {
@@ -329,6 +314,7 @@
   .section-titles {
     font-size: 2.2rem;
   }
+
   .projects-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -367,6 +353,10 @@
 
   .projects {
     padding: 3rem 0;
+  }
+
+  .section-titles {
+    font-size: 1.8rem;
   }
 
   .section-title {

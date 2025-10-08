@@ -3,7 +3,7 @@ import { FaLaptopCode } from "react-icons/fa";
 export const projects = [
   {
     id: 1,
-    title: "Aspire - ATMECS",
+    title: "Aspire - Atmecs Technologies",
     description:
       "Was a part of their in-house IT team which was intended to build Aspire application. Created an organization module, talent module, HR admin module, resign employee module. UI implementation and API integration part was done.",
     technologies: ["React.js", "Node.js", "Bootstrap", "API Integration"],
@@ -15,7 +15,7 @@ export const projects = [
       "UI Implementation",
       "API Integration",
     ],
-    duration: "29th Aug 2023 – 20th Feb 2025",
+    duration: "29 Aug 2023 – 20 Feb 2025",
     position: "Senior Software Engineer",
     icon: <FaLaptopCode className="project-title-icon" />,
     github: "https://github.com",
@@ -24,7 +24,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Jio Signage - Xeedo",
+    title: "Jio Signage - Xeedo Technologies",
     description:
       "Created user management portal with API integration for Jio signage. Implemented various forms and entirely converted existing signage system using React.js. Developed user authoring page with content management features.",
     technologies: ["React.js", "Material UI", "CSS", "API Integration"],
@@ -36,7 +36,7 @@ export const projects = [
       "Playlist Creation",
       "Schedule Management",
     ],
-    duration: "09 Dec 2022 – 30th June 2023",
+    duration: "09 Dec 2022 – 30 June 2023",
     position: "Software Engineer",
     icon: <FaLaptopCode className="project-title-icon" />,
     github: "https://github.com",
@@ -45,7 +45,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Macy's - Zensar",
+    title: "Macy's - Zensar Technologies",
     description:
       "Returns Common Services (RCS/RCSS) is a suite of APIs that enables the enterprise to centralize all capabilities related to customer returns. This includes return policies, bypass policies, return initiation, return acceptance, return processing partners, estimated refund amounts, and return/problem declarations.",
     technologies: ["React.js", "Redux", "API Integration", "JavaScript"],
@@ -66,7 +66,7 @@ export const projects = [
   },
   {
     id: 4,
-    title: "IntelyForms - Oxcytech Systems",
+    title: "IntelyForms - Oxcytech Technologies",
     description:
       "IntelyForms is a US-based no-code form building tool that allows users to easily build and configure forms and secure, integrated workflows to connect with their audience. Users can create workspaces, manipulate data, and integrate with various services.",
     technologies: [
@@ -85,7 +85,7 @@ export const projects = [
       "Form Configuration & Customization",
       "Audience Connection Features",
     ],
-    duration: "18th June 2020 – 28th Feb 2022",
+    duration: "18 June 2020 – 28 Feb 2022",
     position: "UI Developer",
     icon: <FaLaptopCode className="project-title-icon" />,
     github: "https://github.com",
@@ -94,7 +94,7 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Inventory Management System - Broad Stairs",
+    title: "Inventory Management System - BroadStairs",
     description:
       "The Inventory Management System is a complete solution for managing inventory operations. It helps organizations manage their details, track sales, purchases, and inventory operations efficiently with comprehensive reporting capabilities.",
     technologies: ["React.js", "JavaScript", "CSS", "API Integration"],
@@ -109,7 +109,7 @@ export const projects = [
 
       "Real-time Inventory Tracking",
     ],
-    duration: "3rd Jan 2019 – 17 Jun 2020",
+    duration: "3 Jan 2019 – 17 Jun 2020",
     position: "Junior Ul Developer.",
     icon: <FaLaptopCode className="project-title-icon" />,
     github: "https://github.com",
@@ -118,7 +118,7 @@ export const projects = [
   },
   {
     id: 6,
-    title: "Travels Automation System - Smart Software",
+    title: "Travels Automation System - SmartSoftware",
     description:
       "Automated Vehicle Tour System is a comprehensive vehicle service system that computerizes the arrangement and collection of recordings for travel distance, fuel resources management, and passenger tracking. The system streamlines tour operations and resource management.",
     technologies: ["React.js", "JavaScript", "CSS", "HTML5"],
