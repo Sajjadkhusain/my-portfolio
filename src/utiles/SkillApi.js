@@ -6,7 +6,13 @@ import {
   FaNodeJs,
   FaGitAlt,
 } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiRedux, SiTypescript } from "react-icons/si";
+import {
+  SiMongodb,
+  SiExpress,
+  SiRedux,
+  SiTypescript,
+  SiTailwindcss,
+} from "react-icons/si";
 
 export const skills = [
   {
@@ -24,6 +30,13 @@ export const skills = [
     description: "Flexbox, Grid, animations, responsive design",
   },
   {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss />,
+    level: 70,
+    color: "#06B6D4",
+    description: "Utility-first CSS framework, responsive design, components",
+  },
+  {
     name: "JavaScript",
     icon: <FaJs />,
     level: 85,
@@ -31,7 +44,14 @@ export const skills = [
     description: "ES6+, DOM manipulation, async programming",
   },
   {
-    name: "React",
+    name: "TypeScript",
+    icon: <SiTypescript />,
+    level: 70,
+    color: "#3178C6",
+    description: "Static typing, interfaces, generics",
+  },
+  {
+    name: "React JS",
     icon: <FaReact />,
     level: 85,
     color: "#61DAFB",
@@ -59,13 +79,6 @@ export const skills = [
     description: "NoSQL, Mongoose, data modeling, aggregation",
   },
   {
-    name: "Git",
-    icon: <FaGitAlt />,
-    level: 85,
-    color: "#F05032",
-    description: "Version control, branching, collaboration",
-  },
-  {
     name: "Redux",
     icon: <SiRedux />,
     level: 75,
@@ -73,10 +86,10 @@ export const skills = [
     description: "State management, actions, reducers, middleware",
   },
   {
-    name: "TypeScript",
-    icon: <SiTypescript />,
-    level: 70,
-    color: "#3178C6",
-    description: "Static typing, interfaces, generics",
+    name: "Git",
+    icon: <FaGitAlt />,
+    level: 85,
+    color: "#F05032",
+    description: "Version control, branching, collaboration",
   },
 ];
