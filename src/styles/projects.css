@@ -7,6 +7,32 @@
 .projects-dark {
   background-color: #151e31;
 }
+.section-titles {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #3498db;
+  position: relative;
+  font-weight: 700;
+  padding-top: 1.9rem;
+  /* font-size: 2.3rem;
+  text-align: center;
+  
+  margin-bottom: 1rem;
+  font-weight: 700;
+  background: #3498db;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-top: 2rem; */
+}
+.section-titles-dark {
+  color: #ffffff;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+}
 
 .section-title {
   text-align: center;
@@ -293,6 +319,9 @@
 }
 
 @media (max-width: 768px) {
+  .section-titles {
+    font-size: 2.2rem;
+  }
   .projects-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
