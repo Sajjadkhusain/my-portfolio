@@ -73,6 +73,7 @@ const Education = () => {
       boxShadow: isDarkMode
         ? "0 10px 25px rgba(0, 0, 0, 0.3)"
         : "0 10px 25px rgba(0, 0, 0, 0.1)",
+      borderColor: isDarkMode ? "#364458" : "#3498db",
       transition: {
         type: "spring",
         stiffness: 400,
