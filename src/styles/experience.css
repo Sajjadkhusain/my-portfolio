@@ -1,107 +1,489 @@
-.experience {
-  background-color: white;
+.projects {
+  background-color: #f9f9f9;
+  padding: 4rem 0;
+  transition: background-color 0.3s ease;
 }
 
-.experience-container {
-  max-width: 900px;
+.projects-dark {
+  background-color: #151e31;
+}
+
+.container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.experience-card {
-  display: flex;
-  margin-bottom: 2.5rem;
-  background: #f9f9f9;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.experience-icon {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(90deg, #3498db, #9b59b6);
-  color: white;
-  border-radius: 50%;
-  margin-right: 1.5rem;
-  flex-shrink: 0;
-  font-size: 1.5rem;
-}
-
-.icon {
-  font-size: 1.5rem;
-}
-
-.experience-content {
-  flex: 1;
-}
-
-.experience-role {
-  font-size: 1.3rem;
-  color: #2c3e50;
-  margin-bottom: 0.3rem;
-}
-
-.experience-company {
-  font-size: 1.1rem;
-  color: #3498db;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-
-.experience-duration {
-  display: inline-block;
-  font-size: 0.9rem;
-  color: #7f8c8d;
+.section-titles {
+  text-align: center;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  background: #f1f1f1;
-  padding: 0.2rem 0.8rem;
-  border-radius: 50px;
+  color: #2c3e50;
+  font-weight: 700;
+  padding-top: 1rem;
 }
 
-.experience-responsibilities {
-  list-style-type: none;
+.section-titles-dark {
+  color: #ffffff;
 }
 
-.experience-responsibilities li {
-  font-size: 1rem;
+.professional-summary {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
   color: #34495e;
   line-height: 1.6;
-  margin-bottom: 0.5rem;
-  position: relative;
-  padding-left: 1.5rem;
+  font-weight: 400;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 }
 
-.experience-responsibilities li::before {
+.professional-summary-dark {
+  color: #a0aec0;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid #3498db;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card-dark {
+  background: #1e293b;
+  border-color: #364458;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-color: #2980b9;
+}
+
+.project-card-dark:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: #4a5c7a;
+}
+
+.project-content {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.project-title-icon {
+  font-size: 1.5rem;
+  color: #3498db;
+}
+
+.projects-dark .project-title-icon {
+  color: #ffffff;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: 600;
+}
+
+.project-title-dark {
+  color: #e2e8f0;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: #e9ecef;
+  margin: 1rem 0;
+}
+
+.project-footer-dark hr {
+  background: #4a5568;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.project-description-dark {
+  color: #a0aec0;
+}
+
+.project-technologies,
+.project-features {
+  margin-bottom: 1.5rem;
+}
+
+.tech-title,
+.features-title {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.tech-title-dark,
+.features-title-dark {
+  color: #e2e8f0;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #bbdefb;
+}
+
+.tag-dark {
+  background: #2d3748;
+  color: #fff;
+  border-color: #4a5568;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.feature-item {
+  font-size: 0.95rem;
+  color: #34495e;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-height: 24px;
+}
+
+.feature-item::before {
   content: "▹";
   position: absolute;
   left: 0;
   color: #3498db;
+  font-weight: bold;
+  margin-right: 0.5rem;
 }
 
+.feature-item-dark {
+  color: #a0aec0;
+}
+
+.feature-item-dark::before {
+  color: #ffffff;
+}
+
+.project-footer {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: auto;
+  border: 1px solid #e9ecef;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-footer-dark {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.footer-icon {
+  font-size: 1rem;
+  color: #3498db;
+  flex-shrink: 0;
+  min-width: 16px;
+}
+
+.projects-dark .footer-icon {
+  color: #ffffff;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #34495e;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.project-footer-dark .footer-text {
+  color: #cbd5e0;
+}
+
+/* ===== RESPONSIVE DESIGN FOR KEY FEATURES ===== */
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+/* Tablets and small desktops (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .features-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+  }
+
+  .feature-item {
+    font-size: 0.92rem;
+  }
+}
+
+/* Tablets (768px and below) */
 @media (max-width: 768px) {
-  .experience-card {
-    flex-direction: column;
+  .projects {
+    padding: 3rem 0;
   }
 
-  .experience-icon {
-    margin-right: 0;
-    margin-bottom: 1rem;
+  .section-titles {
+    font-size: 2.2rem;
+    padding-top: 0.5rem;
+  }
+
+  .professional-summary {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .projects-container {
+    gap: 1.5rem;
+  }
+
+  .project-content {
+    padding: 1.5rem;
+  }
+
+  /* Key Features: Switch to single column on tablets */
+  .features-list {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .project-footer {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .footer-item {
+    width: 100%;
   }
 }
 
+/* Mobile devices (576px and below) */
 @media (max-width: 576px) {
-  .experience-card {
+  .projects {
+    padding: 2.5rem 0;
+  }
+
+  .section-titles {
+    font-size: 2rem;
+  }
+
+  .professional-summary {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .project-tags {
+    gap: 0.4rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* Key Features: Single column with adjusted spacing */
+  .features-list {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .feature-item {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-item {
+    align-items: flex-start;
+  }
+
+  .footer-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Small mobile devices (375px and below) */
+@media (max-width: 375px) {
+  .projects {
+    padding: 2rem 0;
+  }
+
+  .section-titles {
+    font-size: 1.8rem;
+  }
+
+  .professional-summary {
+    font-size: 1rem;
+    padding: 0 0.25rem;
+  }
+
+  .project-content {
+    padding: 1.2rem;
+  }
+
+  /* Key Features: Compact single column */
+  .features-list {
+    gap: 0.4rem;
+  }
+
+  .feature-item {
+    font-size: 0.85rem;
+    padding-left: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .project-footer {
+    padding: 0.7rem;
+    gap: 0.5rem;
+  }
+
+  .footer-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+    text-align: left;
+  }
+
+  .project-tags {
+    justify-content: center;
+  }
+}
+
+/* Extra small devices (320px and below) */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .project-content {
     padding: 1rem;
   }
 
-  .experience-role {
-    font-size: 1.1rem;
+  .project-title {
+    font-size: 1.2rem;
   }
 
-  .experience-company {
-    font-size: 1rem;
+  .project-description {
+    font-size: 0.9rem;
   }
+
+  .feature-item {
+    font-size: 0.8rem;
+    padding-left: 0.8rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+}
+
+/* Special case for projects with many key features */
+@media (min-width: 1024px) {
+  .features-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ensure proper alignment for odd number of features */
+.features-list:has(li:nth-child(odd):last-child) {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Better visual hierarchy for features */
+.project-features {
+  margin-bottom: 1.5rem;
+}
+
+.features-title {
+  margin-bottom: 1rem;
 }
