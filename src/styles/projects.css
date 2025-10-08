@@ -27,11 +27,18 @@
   padding-top: 2rem; */
 }
 .section-titles-dark {
-  color: #ffffff;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #3498db;
+  position: relative;
+  font-weight: 700;
+  padding-top: 1.9rem;
+  /* color: #ffffff;
   background: none;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
-  background-clip: unset;
+  background-clip: unset; */
 }
 
 .section-title {
