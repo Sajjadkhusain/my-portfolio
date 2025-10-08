@@ -79,7 +79,7 @@
 
 .skill-card-dark {
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-  border: 1px solid #ffffff;
+  border: 1px solid #364458;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -97,7 +97,7 @@
 }
 
 .skill-card-dark::before {
-  background-color: #ffffff;
+  background-color: #364458;
 }
 
 .skill-card:hover::before {
