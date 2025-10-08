@@ -52,7 +52,7 @@ const About = () => {
               transition={{ duration: 0.3 }}
             >
               <img
-                src="/assets/khan1.jpeg"
+                src="/assets/khan.jpeg"
                 alt="Sajjad Husain Khan"
                 className="about-img"
                 onError={(e) => {

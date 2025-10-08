@@ -55,7 +55,7 @@ const Header = () => {
         className="header-container"
       >
         <div className="logo">
-          <NavLink to="/">&lt; Sajjad Husain Khan /&gt;</NavLink>
+          <NavLink to="/">Sajjad Husain Khan</NavLink>
         </div>
 
         <nav className={`nav ${isOpen ? "open" : ""}`}>
