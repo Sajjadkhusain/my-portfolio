@@ -103,11 +103,11 @@ const Contact = () => {
               >
                 Get in Touch
               </h3>
-              <div
+              {/* <div
                 className={`card-divider ${
                   isDarkMode ? "card-divider-dark" : ""
                 }`}
-              ></div>
+              ></div> */}
 
               <ul className="contact-details">
                 <motion.li
@@ -196,11 +196,11 @@ const Contact = () => {
               >
                 Current Availability
               </h3>
-              <div
+              {/* <div
                 className={`card-divider ${
                   isDarkMode ? "card-divider-dark" : ""
                 }`}
-              ></div>
+              ></div> */}
 
               <div className="availability-content">
                 <div className="availability-status">
@@ -242,11 +242,11 @@ const Contact = () => {
               >
                 Send a Message
               </h3>
-              <div
+              {/* <div
                 className={`card-divider ${
                   isDarkMode ? "card-divider-dark" : ""
                 }`}
-              ></div>
+              ></div> */}
             </div>
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-row">

@@ -88,7 +88,7 @@
 
 .contact-card-dark {
   background: #1e293b;
-  border: 1px solid #3498db;
+  border: 1px solid #364458;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -106,7 +106,7 @@
 }
 
 .availability-card-dark {
-  border-left: 5px solid #16a34a;
+  border-left: 5px solid #364458;
 }
 
 .form-card {
@@ -131,7 +131,8 @@
 }
 
 .card-divider-dark {
-  background: linear-gradient(90deg, #3498db, #9b59b6);
+  background: white;
+  /* background: linear-gradient(90deg, #3498db, #9b59b6); */
 }
 
 .contact-subtitle {
@@ -187,7 +188,8 @@
 }
 
 .icon-wrapper-dark {
-  background: linear-gradient(135deg, #3498db, #9b59b6);
+  background: linear-gradient(135deg, #1e293b, #171f3a);
+  /* background: linear-gradient(135deg, #3498db, #9b59b6); */
 }
 
 .contact-icons {
@@ -352,10 +354,14 @@
   overflow: hidden;
 }
 
-.submit-btn-dark {
+/* .submit-btn-dark {
   background: linear-gradient(135deg, #3498db, #9b59b6);
-}
+} */
 
+.submit-btn-dark {
+  border: 1px solid #364458;
+  background: linear-gradient(135deg, #151e31, #313e5a);
+}
 .submit-btn::before {
   content: "";
   position: absolute;
