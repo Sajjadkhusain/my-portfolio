@@ -245,7 +245,7 @@
 
   /* For mobile dark mode */
   .dark .nav {
-    background-color: var(--surface-color);
+    background-color: #151e31;
   }
 
   /* Mobile dark mode hover colors */
