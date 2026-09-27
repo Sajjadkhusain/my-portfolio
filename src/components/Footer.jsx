@@ -1,10 +1,4 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaEnvelope,
-  FaPhoneAlt,
-} from "react-icons/fa";
+import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import "../styles/Footer.css";
 import { Link } from "react-router-dom";
