@@ -5,7 +5,7 @@ import "../styles/hero.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { TiSocialLinkedinCircular } from "react-icons/ti";
-import { MdOutlineMailOutline } from "react-icons/md";
+import { MdOutlineMailOutline, MdOutlineWhatsapp } from "react-icons/md";
 import { useTheme } from "../context/ThemeContext";
 
 const Hero = () => {
@@ -147,6 +147,10 @@ const Hero = () => {
                     {
                       icon: <MdOutlineMailOutline />,
                       url: "mailto:sajjadkhan5544@gmail.com",
+                    },
+                    {
+                      icon: <MdOutlineWhatsapp />,
+                      url: "https://wa.me/919764937392",
                     },
                   ].map((social, index) => (
                     <motion.a
