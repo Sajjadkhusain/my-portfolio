@@ -5,7 +5,11 @@ import "../styles/hero.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { TiSocialLinkedinCircular } from "react-icons/ti";
-import { MdOutlineMailOutline, MdOutlineWhatsapp } from "react-icons/md";
+import {
+  MdOutlineMailOutline,
+  MdOutlineWhatsapp,
+  MdOutlinePhone,
+} from "react-icons/md";
 import { useTheme } from "../context/ThemeContext";
 
 const Hero = () => {
@@ -151,6 +155,10 @@ const Hero = () => {
                     {
                       icon: <MdOutlineWhatsapp />,
                       url: "https://wa.me/919764937392",
+                    },
+                    {
+                      icon: <MdOutlinePhone />,
+                      url: "tel:+919764937392",
                     },
                   ].map((social, index) => (
                     <motion.a
