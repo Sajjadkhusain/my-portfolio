@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGraduationCap, FaUniversity } from "react-icons/fa";
+import { FaGraduationCap } from "react-icons/fa";
 import { GiOpenBook } from "react-icons/gi";
 import "../styles/education.css";
 import { useTheme } from "../context/ThemeContext";

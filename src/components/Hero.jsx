@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "../styles/hero.css";
-import { FaGithub, FaLongArrowAltRight } from "react-icons/fa";
+import { FaLongArrowAltRight } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { MdOutlineMailOutline } from "react-icons/md";

@@ -1,11 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaHome, FaArrowLeft } from "react-icons/fa";
 import "../styles/ErrorPage.css";
 
 const ErrorPage = () => {
-  const navigate = useNavigate();
-
   return (
     <section className="not-found-section">
       <div className="not-found-container">
