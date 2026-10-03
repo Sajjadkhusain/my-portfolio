@@ -1,0 +1,112 @@
+{
+  "greeting": "Hi! I'm Sajjad's portfolio assistant. Ask me about his background, education, skills, projects, or experience.",
+  "suggestions": [
+    "What does Sajjad do?",
+    "What skills does he have?",
+    "Tell me about his projects",
+    "Where did he study?"
+  ],
+  "answers": [
+    {
+      "id": "greeting",
+      "keywords": ["hi", "hello", "hey", "good morning", "good afternoon"],
+      "response": "Hello! I can help you explore Sajjad's portfolio. What would you like to know?"
+    },
+    {
+      "id": "home",
+      "keywords": [
+        "home",
+        "who is sajjad",
+        "who are you",
+        "introduce",
+        "profile",
+        "full stack developer"
+      ],
+      "response": "Sajjad Husain Khan is a Full Stack Developer with more than 8 years of experience building web applications. His work spans responsive interfaces, React, Node.js, APIs, and databases.",
+      "link": { "label": "Visit home", "path": "/" }
+    },
+    {
+      "id": "about",
+      "keywords": [
+        "about sajjad",
+        "about him",
+        "background",
+        "bio",
+        "hobbies",
+        "tell me about"
+      ],
+      "response": "Sajjad is a Full Stack Developer focused on JavaScript technologies, including React, Node.js, Express, and MongoDB. He enjoys building web applications and keeps learning new technologies. Outside work, he enjoys hiking and reading tech blogs.",
+      "link": { "label": "Read about Sajjad", "path": "/about" }
+    },
+    {
+      "id": "education",
+      "keywords": [
+        "education",
+        "study",
+        "studied",
+        "degree",
+        "college",
+        "university",
+        "mca",
+        "bca"
+      ],
+      "response": "Sajjad earned a Master of Computer Applications (MCA) specializing in Web Technologies at Savitribai Phule Pune University (2014–2016). Before that, he completed a Bachelor of Computer Applications (BCA) at Sant Gadge Baba Amravati University (2011–2014).",
+      "link": { "label": "View education", "path": "/education" }
+    },
+    {
+      "id": "skills",
+      "keywords": [
+        "skills",
+        "technologies",
+        "tech stack",
+        "programming languages",
+        "frameworks",
+        "what can he do"
+      ],
+      "responseKey": "skills",
+      "link": { "label": "Explore skills", "path": "/skills" }
+    },
+    {
+      "id": "projects",
+      "keywords": [
+        "projects",
+        "project",
+        "portfolio work",
+        "built",
+        "applications",
+        "products"
+      ],
+      "responseKey": "projects",
+      "link": { "label": "View project work", "path": "/experience" }
+    },
+    {
+      "id": "experience",
+      "keywords": [
+        "experience",
+        "career",
+        "work history",
+        "employment",
+        "years",
+        "companies",
+        "job"
+      ],
+      "responseKey": "experience",
+      "link": { "label": "View professional journey", "path": "/experience" }
+    },
+    {
+      "id": "contact",
+      "keywords": [
+        "contact",
+        "email",
+        "phone",
+        "hire",
+        "reach",
+        "location",
+        "available"
+      ],
+      "response": "You can reach Sajjad at sajjadkhan5544@gmail.com or call +91 9764937392. He is based in Akola, India, and the portfolio says he is available for new opportunities.",
+      "link": { "label": "Get in touch", "path": "/contact" }
+    }
+  ],
+  "fallback": "I couldn't find that detail in Sajjad's portfolio yet. Try asking about his skills, education, projects, work experience, or how to contact him."
+}

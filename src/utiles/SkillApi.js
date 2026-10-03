@@ -12,6 +12,7 @@ import {
   SiRedux,
   SiTypescript,
   SiTailwindcss,
+  SiStorybook,
 } from "react-icons/si";
 
 export const skills = [
@@ -91,5 +92,13 @@ export const skills = [
     level: 85,
     color: "#F05032",
     description: "Version control, branching, collaboration",
+  },
+  {
+    name: "Storybook",
+    icon: <SiStorybook />,
+    level: 80,
+    color: "#FF4785",
+    description:
+      "UI component development, documentation, testing, and design system",
   },
 ];
