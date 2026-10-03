@@ -409,22 +409,18 @@ const PortfolioAssistant = () => {
         )}
       </AnimatePresence>
 
-      <button
-        className="assistant-launcher"
-        type="button"
-        onClick={() => {
-          setIsOpen((open) => !open);
-          setIsMenuOpen(false);
-        }}
-        aria-label={
-          isOpen ? "Close portfolio assistant" : "Open portfolio assistant"
-        }
-        aria-expanded={isOpen}
-        aria-controls="portfolio-assistant-panel"
-      >
-        {isOpen ? (
-          <FaTimes aria-hidden="true" />
-        ) : (
+      {!isOpen && (
+        <button
+          className="assistant-launcher"
+          type="button"
+          onClick={() => {
+            setIsOpen(true);
+            setIsMenuOpen(false);
+          }}
+          aria-label="Open portfolio assistant"
+          aria-expanded={false}
+          aria-controls="portfolio-assistant-panel"
+        >
           <motion.span
             className="assistant-logo-mark"
             aria-hidden="true"
@@ -444,8 +440,8 @@ const PortfolioAssistant = () => {
               <span className="assistant-robot-mouth" />
             </span>
           </motion.span>
-        )}
-      </button>
+        </button>
+      )}
     </div>
   );
 };
