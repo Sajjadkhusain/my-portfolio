@@ -207,6 +207,62 @@
   color: #e2e8f0;
 }
 
+.detail-copy-row {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  gap: 0.5rem;
+}
+
+.detail-copy-row .detail-value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.copy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #287fb5;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.copy-button:hover {
+  color: #287fb5;
+}
+
+.copy-button:focus-visible {
+  outline: 3px solid rgba(52, 152, 219, 0.4);
+  outline-offset: 2px;
+}
+
+.copy-button-dark {
+  color: #bfdbfe;
+}
+
+.copy-button-dark:hover {
+  color: #bfdbfe;
+}
+
+.copy-feedback {
+  flex: 0 0 auto;
+  color: #16803c;
+  font-size: 0.8rem;
+}
+
+.contact-card-dark .copy-feedback {
+  color: #86efac;
+}
+
 /* Availability Card Styles */
 .availability-content {
   margin-top: 1.5rem;
@@ -529,6 +585,11 @@
     padding: 1rem;
   }
 
+  .detail-copy-row {
+    justify-content: center;
+    width: 100%;
+  }
+
   .icon-wrapper {
     margin-right: 0;
     margin-bottom: 0.8rem;
@@ -625,6 +686,10 @@
     flex-direction: column;
     text-align: center;
     padding: 0.9rem;
+  }
+
+  .detail-copy-row {
+    justify-content: center;
   }
 
   .icon-wrapper {
