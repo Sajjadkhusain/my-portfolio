@@ -5,27 +5,9 @@ import {
   FaMapMarkerAlt,
   FaPhone,
   FaEnvelope,
-  FaCheck,
 } from "react-icons/fa";
-import { FaRegCopy } from "react-icons/fa6";
 import "../styles/contact.css";
 import { useTheme } from "../context/ThemeContext";
-
-const copyTextFallback = (text) => {
-  const textArea = document.createElement("textarea");
-  textArea.value = text;
-  textArea.setAttribute("readonly", "");
-  textArea.style.position = "fixed";
-  textArea.style.opacity = "0";
-  document.body.appendChild(textArea);
-  textArea.select();
-
-  try {
-    return document.execCommand("copy");
-  } finally {
-    textArea.remove();
-  }
-};
 
 const Contact = () => {
   const { isDarkMode } = useTheme();
@@ -38,32 +20,6 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-  const [copyStatus, setCopyStatus] = useState(null);
-
-  const handleCopy = async (field, value) => {
-    try {
-      if (navigator.clipboard?.writeText) {
-        try {
-          await navigator.clipboard.writeText(value);
-        } catch (clipboardError) {
-          if (!copyTextFallback(value)) {
-            throw clipboardError;
-          }
-        }
-      } else if (!copyTextFallback(value)) {
-        throw new Error("Clipboard access is unavailable.");
-      }
-
-      setCopyStatus({ field, status: "copied" });
-    } catch (error) {
-      console.error(`Failed to copy ${field}:`, error);
-      setCopyStatus({ field, status: "error" });
-    }
-
-    setTimeout(() => {
-      setCopyStatus((current) => (current?.field === field ? null : current));
-    }, 2000);
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -190,48 +146,13 @@ const Contact = () => {
                   >
                     <FaPhone className="contact-icons" />
                   </div>
-                  <div className="detail-copy-row">
-                    <span
-                      className={`detail-value ${
-                        isDarkMode ? "detail-value-dark" : ""
-                      }`}
-                    >
-                      +91 9764937392
-                    </span>
-                    {copyStatus?.field === "phone" && (
-                      <span className="copy-feedback" aria-live="polite">
-                        {copyStatus.status === "copied"
-                          ? "Copied"
-                          : "Copy failed"}
-                      </span>
-                    )}
-                    <button
-                      type="button"
-                      className={`copy-button ${
-                        isDarkMode ? "copy-button-dark" : ""
-                      }`}
-                      onClick={() => handleCopy("phone", "+91 9764937392")}
-                      aria-label={
-                        copyStatus?.field === "phone" &&
-                        copyStatus.status === "copied"
-                          ? "Phone number copied"
-                          : "Copy phone number"
-                      }
-                      title={
-                        copyStatus?.field === "phone" &&
-                        copyStatus.status === "copied"
-                          ? "Copied"
-                          : "Copy phone number"
-                      }
-                    >
-                      {copyStatus?.field === "phone" &&
-                      copyStatus.status === "copied" ? (
-                        <FaCheck aria-hidden="true" />
-                      ) : (
-                        <FaRegCopy aria-hidden="true" />
-                      )}
-                    </button>
-                  </div>
+                  <span
+                    className={`detail-value ${
+                      isDarkMode ? "detail-value-dark" : ""
+                    }`}
+                  >
+                    +91 9764937392
+                  </span>
                 </motion.li>
                 <motion.li
                   whileHover={{ x: 5 }}
@@ -247,50 +168,13 @@ const Contact = () => {
                   >
                     <FaEnvelope className="contact-icons" />
                   </div>
-                  <div className="detail-copy-row">
-                    <span
-                      className={`detail-value ${
-                        isDarkMode ? "detail-value-dark" : ""
-                      }`}
-                    >
-                      sajjadkhan5544@gmail.com
-                    </span>
-                    {copyStatus?.field === "email" && (
-                      <span className="copy-feedback" aria-live="polite">
-                        {copyStatus.status === "copied"
-                          ? "Copied"
-                          : "Copy failed"}
-                      </span>
-                    )}
-                    <button
-                      type="button"
-                      className={`copy-button ${
-                        isDarkMode ? "copy-button-dark" : ""
-                      }`}
-                      onClick={() =>
-                        handleCopy("email", "sajjadkhan5544@gmail.com")
-                      }
-                      aria-label={
-                        copyStatus?.field === "email" &&
-                        copyStatus.status === "copied"
-                          ? "Email address copied"
-                          : "Copy email address"
-                      }
-                      title={
-                        copyStatus?.field === "email" &&
-                        copyStatus.status === "copied"
-                          ? "Copied"
-                          : "Copy email address"
-                      }
-                    >
-                      {copyStatus?.field === "email" &&
-                      copyStatus.status === "copied" ? (
-                        <FaCheck aria-hidden="true" />
-                      ) : (
-                        <FaRegCopy aria-hidden="true" />
-                      )}
-                    </button>
-                  </div>
+                  <span
+                    className={`detail-value detail-email ${
+                      isDarkMode ? "detail-value-dark" : ""
+                    }`}
+                  >
+                    sajjadkhan5544@gmail.com
+                  </span>
                 </motion.li>
               </ul>
             </motion.div>
