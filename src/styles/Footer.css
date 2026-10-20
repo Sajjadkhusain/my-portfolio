@@ -2,7 +2,6 @@
   background: var(--footer-bg);
   box-shadow: 0 2px 10px var(--shadow-color);
   padding: 4rem 2rem 2rem;
-  font-family: "Poppins", sans-serif;
   color: var(--text-primary);
   transition: all 0.3s ease;
 }

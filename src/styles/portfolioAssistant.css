@@ -14,7 +14,6 @@
   --assistant-wash: #f2f7f6;
   --assistant-shadow: 0 18px 60px rgba(33, 61, 93, 0.2);
   color: var(--assistant-ink);
-  font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
 .portfolio-assistant.is-dark {
