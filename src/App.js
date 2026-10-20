@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Header from "./components/Header";
 import Loader from "./components/Loader";
 import PortfolioAssistant from "./components/PortfolioAssistant";
+import BackToTop from "./components/BackToTop";
 import { ThemeProvider } from "./context/ThemeContext";
 import "./App.css";
 
@@ -65,6 +66,7 @@ function AppContent() {
       </AnimatePresence>
       <Footer />
       <PortfolioAssistant />
+      <BackToTop />
     </>
   );
 }
